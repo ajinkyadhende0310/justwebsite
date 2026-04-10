@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- SEO Meta Tags -->
+<meta name="description" content="Trusted advocate & notary in Pune. 40+ years of legal practice in Motor Accident Claims, Insurance, Civil/Criminal Law, Property Law. Serving Maharashtra & India.">
+<meta name="keywords" content="advocate for 138 pune, Bombay High Court lawyers, Top lawyer Pune, Best MACT advocate in Pune, How to file motor accident claim in Pune, HIGH COURT ADVOCATES, motor accident claim, insurance lawyer, property law, notary public, criminal lawyer, civil litigation, MACT compensation, Bail, Anticipatory Bail, family lawyer, legal consultant, legal advice, legal services, Pune law firm, Maharashtra advocate, legal representation, legal consultation, legal document drafting, legal dispute resolution, legal aid, legal support, legal guidance, legal expertise, legal counsel, legal assistance, legal advice in Pune, legal services in Maharashtra, legal representation in India, 138 negotiable instruments expert advocate, advocate for cheque bounce cases, advocate for dishonoured cheque cases, advocate for NI Act cases, Legal notice drafting service Pune, RTI filing advocate Pune, Document drafting lawyer Pune, Legal heir certificate advocate Pune, Will drafting lawyer Pune, NRI property legal help Pune, Notary public near me Pune, Property registration advocate Pune,
+Sale deed lawyer Pune, Title verification advocate Pune, Property dispute resolution Pune, Court fee negotiable instruments, 138 limitation, calaculator for limitation, cheque bounce limitation, NI Act limitation, legal notice timeline， complaint filing deadline， legal action planner，   
+Criminal lawyer Pune， Criminal defence advocate Pune， Bail application lawyer Pune， FIR filing advocate Pune，
+BNSS lawyer Pune，
+most affordable legal services Pune，
+best legal services Pune，
+top legal services Pune，
+experienced advocate Pune,
+trusted lawyer Pune,
+legal consultation Pune,
+legal advice Pune,
+legal representation Pune,
+legal services Pune,
+legal assistance Pune,
+legal support Pune,
+legal guidance Pune,
+legal expertise Pune,
+legal counsel Pune,
+trusted and afforadable legal services Pune,
+best legal services Pune,
+top legal services Pune,
+experienced advocate Pune,
+trusted lawyer Pune,
+legal consultation Pune,
+legal advice Pune,
+legal representation Pune,
+legal services Pune,
+legal assistance Pune,
+legal support,
+legal guidance,
+legal expertise,
+legal counsel">
+<title>Section 138 NI Act — Limitation Calculator</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg:     #F7F4EF;
+  --bg2:    #EDE7DF;
+  --card:   #FFFCF9;
+  --bdr:    #dacfe2;
+  --text:   #3A2F27;
+  --muted:  #9C8878;
+  --blue:   #6B8FBF; --blue-bg:#EBF0F8; --blue-bdr:#C5D5EA;
+  --vio:    #8F7BBF; --vio-bg:#F0EDFB;  --vio-bdr:#D6CEEE;
+  --rose:   #C2706F; --rose-bg:#FAF0EF; --rose-bdr:#EEC9C8;
+  --amb:    #B8894A; --amb-bg:#FBF5EA;  --amb-bdr:#E8D3AC;
+  --grn:    #5E9E7E; --grn-bg:#EDF6F1;  --grn-bdr:#BCDECE;
+  --teal:   #4B8FA8; --teal-bg:#EAF4F8; --teal-bdr:#AACFDA;
+  --oran:   #C85A1A;
+  --sh:     0 2px 18px rgba(58,47,39,0.07);
+  --sh-lg:  0 6px 34px rgba(58,47,39,0.11);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;background:var(--bg);
+  background-image:radial-gradient(circle at 12% 20%,rgba(107,143,191,.09) 0%,transparent 45%),
+                   radial-gradient(circle at 88% 78%,rgba(143,123,191,.07) 0%,transparent 45%);
+  font-family:'DM Sans',sans-serif;padding:32px 16px 56px;color:var(--text);
+}
+.wrap{max-width:840px;margin:0 auto}
+
+/* ── HEADER ── */
+.hdr{background:linear-gradient(135deg,#42067e,#7B6BAF);border-radius:20px;padding:28px 32px;margin-bottom:18px;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(107,143,191,.28)}
+.hdr::after{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(255,255,255,.13),transparent 70%);border-radius:50%;pointer-events:none}
+.hdr-in{display:flex;align-items:center;gap:18px;position:relative;z-index:1}
+.hdr-ico{width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.hdr-eye{font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.65);text-transform:uppercase;margin-bottom:4px}
+.hdr-ttl{font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;font-weight:700;line-height:1.2}
+.hdr-sub{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px;font-weight:300}
+
+/* ── LAW PILLS ── */
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.pill{display:flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--bdr);border-radius:50px;padding:6px 14px;box-shadow:var(--sh);font-size:12px}
+.pdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.plbl{color:var(--muted)}.pval{font-weight:600}
+
+/* ── TAB SWITCHER ── */
+.tabs{display:flex;gap:0;background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:6px;margin-bottom:18px;box-shadow:var(--sh)}
+.tab-btn{flex:1;padding:11px 16px;border-radius:11px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--muted);background:transparent;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.tab-btn.active{background:linear-gradient(135deg,#360087,#8F7BBF);color:#fff;font-weight:600;box-shadow:0 3px 12px rgba(107,143,191,.3)}
+.tab-btn:hover:not(.active){background:var(--bg2);color:var(--text)}
+.tab-pane{display:none}.tab-pane.active{display:block}
+
+/* ── CARD ── */
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:26px 30px;box-shadow:var(--sh-lg);margin-bottom:18px}
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.sh-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.sh-ttl{font-size:14px;font-weight:600;color:var(--text)}
+.sh-sub{font-size:12px;color:var(--muted)}
+
+/* ── GRIDS ── */
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px}
+.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin-bottom:18px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.s2{grid-column:1/-1}
+
+/* ── INPUTS ── */
+.fw{display:flex;flex-direction:column}
+label{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+input[type=text],input[type=date],input[type=number]{width:100%;padding:10px 13px;border-radius:10px;border:1.5px solid var(--bdr);font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);outline:none;transition:border-color .2s,box-shadow .2s}
+input:focus{border-color:#6B8FBF;box-shadow:0 0 0 3px rgba(107,143,191,.14)}
+input.ef{border-color:#C2706F!important;box-shadow:0 0 0 3px rgba(194,112,111,.13)!important}
+input.okf{border-color:#5E9E7E!important;box-shadow:0 0 0 3px rgba(94,158,126,.13)!important}
+.hint{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.hint.e{color:#C2706F}.hint.ok{color:#5E9E7E}
+.fee-box{padding:10px 13px;border-radius:10px;border:1.5px solid #E8D3AC;background:#FBF5EA;font-size:15px;font-weight:700;color:#B8894A;min-height:43px;display:flex;align-items:center}
+
+/* ── BUTTONS ── */
+.btn-row{display:flex;gap:12px;margin-top:26px}
+.btn-go{flex:1;padding:13px;border-radius:12px;background:linear-gradient(135deg,#6B8FBF,#8F7BBF);color:#fff;border:none;cursor:pointer;font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;box-shadow:0 4px 16px rgba(107,143,191,.32);transition:transform .15s,box-shadow .15s}
+.btn-go:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(107,143,191,.4)}
+.btn-go:active{transform:translateY(0)}
+.btn-go.teal{background:linear-gradient(135deg,#4B8FA8,#5E9E7E)}
+.btn-rst{padding:13px 22px;border-radius:12px;background:var(--bg2);color:var(--muted);border:1px solid var(--bdr);cursor:pointer;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;transition:background .2s}
+.btn-rst:hover{background:var(--bdr)}
+
+/* ── STATUS BANNER ── */
+.banner{border-radius:16px;padding:16px 22px;display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.b-open{background:#EDF6F1;border:1.5px solid #BCDECE}
+.b-lapsed{background:#FAF0EF;border:1.5px solid #EEC9C8}
+.b-barred{background:#FFF4EE;border:1.5px solid #F0C0A0}
+.b-emoji{font-size:34px;flex-shrink:0}
+.b-title{font-size:15px;font-weight:700}
+.b-open .b-title{color:#3A7A5E}.b-lapsed .b-title{color:#A3514F}.b-barred .b-title{color:#7A2E0E}
+.b-sub{font-size:13px;color:var(--muted);margin-top:3px}
+.b-badge{margin-left:auto;flex-shrink:0;border-radius:50px;padding:6px 16px;font-size:13px;font-weight:700;white-space:nowrap}
+.b-badge.open{background:#5E9E7E;color:#fff}.b-badge.lapsed{background:#C2706F;color:#fff}.b-badge.barred{background:#C85A1A;color:#fff}
+
+/* ── LIMITATION WARNING ── */
+.lim-card{background:#FFF8F2;border:2px solid #E8A87A;border-left:6px solid #C85A1A;border-radius:14px;overflow:hidden;margin-bottom:14px;box-shadow:0 4px 20px rgba(200,90,26,.11);animation:lpulse 2.5s ease-in-out infinite}
+@keyframes lpulse{0%,100%{box-shadow:0 4px 20px rgba(200,90,26,.11)}50%{box-shadow:0 4px 28px rgba(200,90,26,.25)}}
+.lim-hd{background:linear-gradient(135deg,#C85A1A,#E07B39);padding:13px 20px;display:flex;align-items:center;gap:12px}
+.lim-hd-ico{font-size:24px}.lim-hd-ttl{color:#fff;font-size:15px;font-weight:700}.lim-hd-sub{color:rgba(255,255,255,.8);font-size:12px;margin-top:2px}
+.lim-bd{padding:16px 20px}.lim-cnt{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#A04010;margin-bottom:10px}
+.lim-it{display:flex;align-items:flex-start;gap:10px;background:#FEF0E6;border:1px solid #F0C0A0;border-radius:10px;padding:11px 14px;margin-bottom:8px}
+.lim-it:last-child{margin-bottom:0}
+.lim-ico{font-size:16px;flex-shrink:0;margin-top:1px}.lim-ttl{font-size:13px;font-weight:700;color:#7A2E0E;margin-bottom:3px}.lim-dsc{font-size:12px;color:#92400E;line-height:1.55}
+.lim-ft{background:#FEF0E4;border-top:1px solid #F0C0A0;padding:12px 20px;font-size:12px;color:#7A4010;line-height:1.65}
+.lim-ft strong{color:#5C2D0E}
+
+/* ── CASE BAR ── */
+.case-bar{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:13px 20px;display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px;box-shadow:var(--sh)}
+.ci-lbl{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+.ci-val{font-size:14px;font-weight:600;color:var(--text)}
+
+/* ── COURT FEE ── */
+.fee-card{background:#FBF5EA;border:1.5px solid #E8D3AC;border-radius:16px;padding:18px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+.stamp{width:68px;height:68px;border-radius:50%;border:3px dashed #C8973A;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.st-top{font-size:8px;font-weight:700;color:#B8894A;letter-spacing:1px;text-transform:uppercase}
+.st-main{font-size:12px;font-weight:800;color:#B8894A;line-height:1.1;text-align:center;padding:0 4px}
+.st-sub{font-size:8px;color:#B8894A;font-weight:600}
+.fc-ttl{font-size:14px;font-weight:700;color:#B8894A;margin-bottom:3px}.fc-note{font-size:12px;color:#8A6530}
+.fc-row{display:flex;gap:28px;margin-top:10px;flex-wrap:wrap}
+.fc-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#A07840;display:block;margin-bottom:2px}
+.fc-val{font-size:20px;font-weight:800;color:#B8894A}.fc-val.big{color:#8A5A1A}
+
+/* ── STEP TIMELINE (existing) ── */
+.step-wrap{display:flex;gap:0;margin-bottom:10px}
+.step-conn{display:flex;flex-direction:column;align-items:center;width:38px;flex-shrink:0;padding-top:16px}
+.step-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0}
+.step-line{width:2px;flex:1;min-height:14px;margin-top:5px;border-radius:2px}
+.step-body{flex:1;border-radius:14px;padding:15px 18px;border:1.5px solid var(--bdr);display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.s-tag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+.s-title{font-size:14px;font-weight:600;margin-bottom:5px}
+.s-date{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:5px}
+.s-detail{font-size:12px;color:var(--muted);line-height:1.5}
+.s-limit{font-size:12px;font-weight:600;margin-top:5px}
+.vbadge,.ibadge{border-radius:50px;padding:5px 14px;align-self:center;font-size:11px;font-weight:700;flex-shrink:0;white-space:nowrap}
+.vbadge{background:#EDF6F1;border:1px solid #BCDECE;color:#5E9E7E}
+.ibadge{background:#FAF0EF;border:1px solid #EEC9C8;color:#C2706F}
+.final-body{flex:1;background:#F0EDFB;border:1.5px solid #D6CEEE;border-radius:14px;padding:18px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.f-tag{display:inline-block;background:#8F7BBF;color:#fff;border-radius:50px;padding:2px 10px;font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:7px}
+.f-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:7px}
+.f-line{font-size:13px;color:var(--muted);margin-bottom:3px}
+.f-date{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#8F7BBF}
+.f-badge{border-radius:12px;padding:12px 18px;text-align:center;flex-shrink:0;align-self:center}
+.f-badge.open{background:#EDF6F1;border:1.5px solid #BCDECE}.f-badge.lapsed{background:#FAF0EF;border:1.5px solid #EEC9C8}
+.fb-lbl{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.fb-val{font-size:20px;font-weight:800}.fb-val.open{color:#5E9E7E}.fb-val.lapsed{color:#C2706F}
+.fb-days{font-size:12px;color:#5E9E7E}
+
+/* ── SUMMARY TABLE ── */
+.sum-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;margin-bottom:14px;box-shadow:var(--sh)}
+.sum-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead tr{background:var(--bg2)}
+th{padding:9px 14px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+td{padding:9px 14px}
+tr.tr-even{background:var(--bg)}tr.tr-odd{background:var(--card)}
+tr.tr-hl{background:#FBF5EA!important}tr.tr-fee{background:#FBF5EA!important}
+td.td-warn{color:#C2706F;font-weight:600}td.td-acc{color:#B8894A;font-weight:700}td.td-fee{color:#B8894A;font-weight:700}
+
+/* ── FUTURE PLANNER ── */
+#planResults{display:none}
+
+.plan-intro{
+  background:linear-gradient(135deg,#EAF4F8,#EDF6F1);
+  border:1.5px solid #AACFDA; border-radius:14px;
+  padding:16px 20px; margin-bottom:18px;
+  display:flex; align-items:flex-start; gap:12px;
+}
+.plan-intro-ico{font-size:22px;flex-shrink:0;margin-top:1px}
+.plan-intro-ttl{font-size:14px;font-weight:700;color:#2A6070;margin-bottom:3px}
+.plan-intro-txt{font-size:12px;color:#3A7080;line-height:1.6}
+
+/* Action deadline cards */
+.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.action-card{border-radius:16px;padding:18px 20px;border:1.5px solid var(--bdr);position:relative;overflow:hidden}
+.action-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;border-radius:50%;opacity:.12;transform:translate(20px,-20px)}
+.ac-num{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;margin-bottom:10px}
+.ac-tag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.ac-title{font-size:14px;font-weight:700;margin-bottom:8px}
+.ac-rule{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px}
+.ac-range-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.ac-from,.ac-to{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;line-height:1.3}
+.ac-arrow{font-size:12px;color:var(--muted);margin:2px 0}
+.ac-urgent{font-size:11px;font-weight:700;border-radius:50px;padding:3px 10px;display:inline-block;margin-top:8px}
+.ac-days-left{font-size:13px;font-weight:700;margin-top:6px}
+
+/* Visual timeline bar */
+.timeline-bar{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:var(--sh)}
+.tb-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:18px}
+.tb-track{position:relative;padding:0 0 0 0}
+.tb-item{display:flex;align-items:stretch;margin-bottom:4px;min-height:52px}
+.tb-left{width:170px;flex-shrink:0;display:flex;align-items:center;justify-content:flex-end;padding-right:16px}
+.tb-date-txt{font-size:12px;font-weight:600;color:var(--text);text-align:right;line-height:1.3}
+.tb-date-sub{font-size:10px;color:var(--muted);text-align:right}
+.tb-center{display:flex;flex-direction:column;align-items:center;width:24px;flex-shrink:0}
+.tb-dot{width:18px;height:18px;border-radius:50%;flex-shrink:0;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.12);z-index:1}
+.tb-vline{width:2px;flex:1;min-height:10px;margin:2px 0}
+.tb-right{flex:1;padding:0 0 14px 14px;display:flex;flex-direction:column;justify-content:center}
+.tb-r-lbl{font-size:11px;font-weight:700;color:var(--text);margin-bottom:1px}
+.tb-r-sub{font-size:11px;color:var(--muted)}
+.tb-window{height:10px;border-radius:50px;margin:8px 0 8px 14px;position:relative;overflow:hidden}
+.tb-window-fill{height:100%;border-radius:50px;background:currentColor;opacity:.25;position:absolute;inset:0}
+.tb-window-line{height:100%;border-radius:50px;background:currentColor;opacity:.7}
+.today-marker{position:absolute;top:0;bottom:0;width:2px;background:#C2706F;z-index:2}
+.today-lbl{position:absolute;top:-14px;font-size:9px;font-weight:700;color:#C2706F;white-space:nowrap;transform:translateX(-50%)}
+
+/* Countdown chips */
+.countdown-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.chip{border-radius:12px;padding:12px 16px;flex:1;min-width:140px;text-align:center}
+.chip-ico{font-size:18px;margin-bottom:4px}
+.chip-val{font-size:22px;font-weight:800;line-height:1}
+.chip-lbl{font-size:11px;margin-top:3px;font-weight:500}
+
+/* Key dates table for planner */
+.kd-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:0}
+.kd-table thead tr{background:var(--bg2)}
+.kd-table th{padding:9px 14px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+.kd-table td{padding:10px 14px;border-bottom:1px solid var(--bdr)}
+.kd-table tr:last-child td{border-bottom:none}
+.kd-table tr:nth-child(odd){background:var(--bg)}
+.kd-table tr:nth-child(even){background:var(--card)}
+.kd-urgency{border-radius:50px;padding:2px 10px;font-size:11px;font-weight:700;display:inline-block}
+
+/* ── DISCLAIMER / FOOTER ── */
+.disc{background:var(--bg2);border:1px solid var(--bdr);border-radius:12px;padding:13px 17px;font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.disc strong{color:var(--text)}
+.ftr{background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:22px 26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;box-shadow:var(--sh);margin-top:22px}
+.ftr-av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#6B8FBF,#8F7BBF);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;border:2px solid #C5D5EA}
+.ftr-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px}
+.ftr-addr{font-size:12px;color:var(--muted);line-height:1.65}
+.ftr-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:7px}
+.ftr-a{font-size:12px;color:#6B8FBF;text-decoration:none;font-weight:500}
+.ftr-a:hover{text-decoration:underline}
+.ftr-copy{font-size:11px;color:#BDB0A6;margin-top:8px}
+
+/* ── PRINT ── */
+@media print{
+  body{background:#fff;padding:0}
+  .no-print,.tabs{display:none!important}
+  .tab-pane{display:block!important}
+  .card{box-shadow:none;border:1px solid #ddd}
+  #results,#planResults{display:block!important}
+}
+@media(max-width:620px){
+  .g3,.g4{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.s2{grid-column:auto}
+  .hdr{padding:20px 18px}.card{padding:20px 16px}.hdr-ttl{font-size:20px}
+  .step-conn{display:none}.action-grid{grid-template-columns:1fr}
+  .tb-left{width:110px}.countdown-row .chip{min-width:100px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-in">
+    <div class="hdr-ico">⚖️</div>
+    <div>
+      <div class="hdr-eye">Negotiable Instruments Act, 1881</div>
+      <div class="hdr-ttl">Section 138 — Limitation Calculator</div>
+      <div class="hdr-sub">Cheque Dishonour · Critical Dates · Court Fee · Limitation Check · Action Planner</div>
+    </div>
+  </div>
+</div>
+
+<!-- LAW PILLS -->
+<div class="pills">
+  <div class="pill"><div class="pdot" style="background:#6B8FBF"></div><span class="plbl">Cheque Validity</span><span class="pval" style="color:#6B8FBF">3 Months</span></div>
+  <div class="pill"><div class="pdot" style="background:#C2706F"></div><span class="plbl">Notice After Dishonour</span><span class="pval" style="color:#C2706F">Within 30 Days</span></div>
+  <div class="pill"><div class="pdot" style="background:#5E9E7E"></div><span class="plbl">Payment Window</span><span class="pval" style="color:#5E9E7E">15 Days</span></div>
+  <div class="pill"><div class="pdot" style="background:#8F7BBF"></div><span class="plbl">Complaint Deadline</span><span class="pval" style="color:#8F7BBF">30 Days after expiry</span></div>
+  <div class="pill"><div class="pdot" style="background:#B8894A"></div><span class="plbl">Court Fee</span><span class="pval" style="color:#B8894A">2% of Amount</span></div>
+</div>
+
+<!-- TABS -->
+<div class="tabs no-print">
+  <button class="tab-btn active" onclick="switchTab('calc',this)">📋 &nbsp;Limitation Calculator</button>
+  <button class="tab-btn" onclick="switchTab('plan',this)">📅 &nbsp;Action Date Planner</button>
+</div>
+
+<!-- ════════════════ TAB 1: LIMITATION CALCULATOR ════════════════ -->
+<div class="tab-pane active" id="tab-calc">
+<div class="card">
+  <div class="sh"><div class="sh-ico" style="background:#EBF0F8">📋</div><div><div class="sh-ttl">Case Details</div><div class="sh-sub">Optional — appears in the generated report</div></div></div>
+  <div class="g3">
+    <div class="fw"><label>Payee / Complainant</label><input type="text" id="payeeName" placeholder="Full name of payee"/></div>
+    <div class="fw"><label>Drawer / Accused</label><input type="text" id="drawerName" placeholder="Full name of drawer"/></div>
+    <div class="fw"><label>Cheque Amount (₹)</label><input type="number" id="chequeAmount" placeholder="e.g. 50000" oninput="onAmtInput()"/></div>
+  </div>
+  <div class="g4">
+    <div class="fw">
+      <label>Cheque No. <span style="color:#C2706F;font-weight:400;text-transform:none;letter-spacing:0">(exactly 6 digits)</span></label>
+      <input type="text" id="chequeNumber" placeholder="e.g. 004821" maxlength="6" oninput="onChequeNum(this)"/>
+      <div class="hint" id="h-chequeNumber">Must be exactly 6 digits</div>
+    </div>
+    <div class="fw"><label>Bank Name</label><input type="text" id="bankName" placeholder="e.g. State Bank of India"/></div>
+    <div class="fw"><label>Branch Name</label><input type="text" id="branchName" placeholder="e.g. Shivajinagar, Pune"/></div>
+    <div class="fw">
+      <label>Court Fee Stamp (2%)</label>
+      <div class="fee-box" id="feePreview">Enter amount above</div>
+      <div class="hint">Auto-calculated @ 2% of cheque amount</div>
+    </div>
+  </div>
+
+  <div class="sh" style="margin-top:4px"><div class="sh-ico" style="background:#F0EDFB">📅</div><div><div class="sh-ttl">Critical Dates</div><div class="sh-sub">All five dates are required</div></div></div>
+  <div class="g2">
+    <div class="fw"><label>① Cheque Date *</label><input type="date" id="chequeDate"/><div class="hint" id="h-chequeDate">Date printed on the cheque</div></div>
+    <div class="fw"><label>② Date of Presentation to Bank *</label><input type="date" id="presentationDate"/><div class="hint" id="h-presentationDate">Must be within 3 months of cheque date</div></div>
+    <div class="fw"><label>③ Date of Memo of Dishonour *</label><input type="date" id="dishonourDate"/><div class="hint" id="h-dishonourDate">Date on the bank's return / dishonour memo</div></div>
+    <div class="fw"><label>④ Date of Legal Demand Notice Issued *</label><input type="date" id="noticeDate"/><div class="hint" id="h-noticeDate">Must be within 30 days of dishonour memo</div></div>
+    <div class="fw s2"><label>⑤ Date of Notice Delivery / Service *</label><input type="date" id="deliveryDate"/><div class="hint" id="h-deliveryDate">Date on which the accused received the notice</div></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn-go" onclick="doCalc()">⚖️ &nbsp;Calculate Limitation Dates</button>
+    <button class="btn-rst no-print" onclick="doReset()">↺ Reset</button>
+  </div>
+</div>
+
+<!-- RESULTS (Tab 1) -->
+<div id="results">
+  <div id="banner" class="banner"><div class="b-emoji" id="bEmoji"></div><div style="flex:1"><div class="b-title" id="bTitle"></div><div class="b-sub" id="bSub"></div></div><div class="b-badge" id="bBadge"></div></div>
+  <div id="limWarn" style="display:none"></div>
+  <div id="caseBar" class="case-bar" style="display:none"></div>
+  <div id="feeCard" class="fee-card" style="display:none">
+    <div class="stamp"><span class="st-top">Court</span><span class="st-main" id="stMain">2%</span><span class="st-sub">Fee</span></div>
+    <div style="flex:1">
+      <div class="fc-ttl">🏛️ Court Fee Stamp Required</div>
+      <div class="fc-note">Section 138 NI Act Complaint — Court Fee @ 2% of Cheque Amount</div>
+      <div class="fc-row">
+        <div><span class="fc-lbl">Cheque Amount</span><span class="fc-val" id="fcBase">—</span></div>
+        <div><span class="fc-lbl">Court Fee (2%)</span><span class="fc-val big" id="fcFee">—</span></div>
+      </div>
+      <div style="font-size:11px;color:#A07840;margin-top:8px">⚠ Affix court fee stamp of exact amount on the complaint before filing.</div>
+    </div>
+  </div>
+  <div id="stepCards"></div>
+  <div class="sum-card"><div class="sum-title">All Critical Dates — Summary</div><table><thead><tr><th>Event</th><th>Actual Date</th><th>Deadline / Limit</th><th>Status</th></tr></thead><tbody id="sumBody"></tbody></table></div>
+  <div class="no-print" style="text-align:right;margin-bottom:14px"><button onclick="window.print()" style="background:#EBF0F8;color:#6B8FBF;border:1px solid #C5D5EA;padding:9px 20px;border-radius:50px;cursor:pointer;font-size:13px;font-family:'DM Sans',sans-serif;font-weight:600">🖨️ Print / Save as PDF</button></div>
+  <div class="disc"><strong>Disclaimer:</strong> This calculator is for informational purposes only and does not constitute legal advice. Limitation periods under Section 138 of the Negotiable Instruments Act, 1881 may be subject to judicial interpretation, condonation of delay under Section 142(b), and other provisions. Consult a qualified advocate for legal advice specific to your case.</div>
+</div>
+</div><!-- #tab-calc -->
+
+<!-- ════════════════ TAB 2: FUTURE DATE PLANNER ════════════════ -->
+<div class="tab-pane" id="tab-plan">
+<div class="card">
+  <div class="sh"><div class="sh-ico" style="background:#EAF4F8">📅</div><div><div class="sh-ttl">Action Date Planner</div><div class="sh-sub">Enter cheque date &amp; dishonour date — get all future action deadlines instantly</div></div></div>
+
+  <div class="plan-intro">
+    <div class="plan-intro-ico">💡</div>
+    <div>
+      <div class="plan-intro-ttl">How to use this planner</div>
+      <div class="plan-intro-txt">Enter the <strong>cheque date</strong> and the <strong>date of dishonour memo</strong> from the bank. The planner will calculate the exact date ranges within which you must take each legal action — present cheque, issue notice, await payment, and file complaint. Dates are shown as <em>from–to</em> ranges so you know your full window.</div>
+    </div>
+  </div>
+
+  <div class="g3">
+    <div class="fw"><label>Payee / Complainant</label><input type="text" id="p-payee" placeholder="Full name of payee"/></div>
+    <div class="fw"><label>Drawer / Accused</label><input type="text" id="p-drawer" placeholder="Full name of drawer"/></div>
+    <div class="fw"><label>Cheque Amount (₹)</label><input type="number" id="p-amt" placeholder="e.g. 50000"/></div>
+  </div>
+  <div class="g2">
+    <div class="fw"><label>① Cheque Date *</label><input type="date" id="p-chqDate"/><div class="hint" id="h-p-chqDate">Date printed on the cheque</div></div>
+    <div class="fw"><label>② Date of Dishonour Memo *</label><input type="date" id="p-dishDate"/><div class="hint" id="h-p-dishDate">Date of the bank's return memo</div></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn-go teal" onclick="doPlan()">📅 &nbsp;Generate Action Plan &amp; Deadlines</button>
+    <button class="btn-rst no-print" onclick="doPlanReset()">↺ Reset</button>
+  </div>
+</div>
+
+<!-- PLANNER RESULTS -->
+<div id="planResults">
+
+  <!-- Intro banner -->
+  <div class="banner b-open" id="planBanner">
+    <div class="b-emoji">📋</div>
+    <div style="flex:1"><div class="b-title" style="color:#2A6070" id="planBTitle">Action Plan Generated</div><div class="b-sub" id="planBSub"></div></div>
+  </div>
+
+  <!-- Case bar -->
+  <div id="planCaseBar" class="case-bar" style="display:none"></div>
+
+  <!-- Countdown chips -->
+  <div class="countdown-row" id="planChips"></div>
+
+  <!-- Action cards grid -->
+  <div class="action-grid" id="planCards"></div>
+
+  <!-- Visual Timeline -->
+  <div class="timeline-bar">
+    <div class="tb-title">Visual Timeline — All Deadlines at a Glance</div>
+    <div id="tbTrack" class="tb-track"></div>
+  </div>
+
+  <!-- Key dates table -->
+  <div class="sum-card">
+    <div class="sum-title">Complete Action Deadline Report</div>
+    <table class="kd-table"><thead><tr><th>#</th><th>Action Required</th><th>From Date</th><th>Latest By</th><th>Window</th><th>Urgency</th></tr></thead>
+    <tbody id="planTable"></tbody></table>
+  </div>
+
+  <div class="no-print" style="text-align:right;margin-bottom:14px"><button onclick="window.print()" style="background:#EAF4F8;color:#4B8FA8;border:1px solid #AACFDA;padding:9px 20px;border-radius:50px;cursor:pointer;font-size:13px;font-family:'DM Sans',sans-serif;font-weight:600">🖨️ Print Action Plan</button></div>
+  <div class="disc"><strong>Note:</strong> This planner assumes notice delivery the same day it is issued (worst-case scenario) to give you the tightest deadlines. In practice, allow 2–3 extra days for postal delivery. All dates assume no court holidays extend the limitation period. Consult Adv. Ajinkya Dhende for case-specific advice.</div>
+</div>
+</div><!-- #tab-plan -->
+
+</div><!-- .wrap -->
+
+<!-- FOOTER -->
+<div class="wrap">
+  <div class="ftr">
+    <div class="ftr-av">⚖️</div>
+    <div style="flex:1">
+      <div class="ftr-name">Adv. Ajinkya Dhende</div>
+      <div class="ftr-addr">Office No. 1, First Floor, MHADA Commercial Complex,<br>Gokhalenagar, Pune – 411016, Maharashtra</div>
+      <div class="ftr-links">
+        <a href="tel:8149135283" class="ftr-a">📞 8149135283</a>
+        <a href="mailto:ajinkya.dhende@gmail.com" class="ftr-a">✉ ajinkya.dhende@gmail.com</a>
+      </div>
+      <div class="ftr-copy">© 2025 Adv. Ajinkya Dhende. All rights reserved. This tool is for informational use only.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════
+   UTILS
+══════════════════════════════ */
+function addD(d,n){var r=new Date(d);r.setDate(r.getDate()+n);return r}
+function addM(d,n){var r=new Date(d);r.setMonth(r.getMonth()+n);return r}
+function fmtL(d){return d.toLocaleDateString('en-IN',{weekday:'long',day:'2-digit',month:'long',year:'numeric'})}
+function fmtS(d){return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}
+function fmtDay(d){return d.toLocaleDateString('en-IN',{weekday:'short',day:'2-digit',month:'short'})}
+function parseD(v){if(!v)return null;var p=v.split('-').map(Number);return new Date(p[0],p[1]-1,p[2])}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function nf(n){return Number(n).toLocaleString('en-IN')}
+function daysBetween(a,b){return Math.round((b-a)/864e5)}
+function today(){var t=new Date();t.setHours(0,0,0,0);return t}
+
+/* ── TAB SWITCHER ── */
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-pane').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ══════════════════════════════
+   TAB 1 — CALCULATOR
+══════════════════════════════ */
+function onAmtInput(){
+  var a=parseFloat(document.getElementById('chequeAmount').value);
+  var el=document.getElementById('feePreview');
+  if(!isNaN(a)&&a>0){el.textContent='₹'+nf(Math.ceil(a*0.02));el.style.color='#B8894A'}
+  else{el.textContent='Enter amount above';el.style.color='#9C8878'}
+}
+function onChequeNum(inp){
+  var v=inp.value.replace(/\D/g,'');inp.value=v;
+  var h=document.getElementById('h-chequeNumber');
+  if(v.length===0){inp.className='';h.textContent='Must be exactly 6 digits';h.className='hint'}
+  else if(v.length<6){inp.className='ef';h.textContent='⚠ Too short — '+v.length+' of 6 digits entered';h.className='hint e'}
+  else{inp.className='okf';h.textContent='✓ Valid 6-digit cheque number';h.className='hint ok'}
+}
+var DHINTS={chequeDate:'Date printed on the cheque',presentationDate:'Must be within 3 months of cheque date',dishonourDate:"Date on the bank's return / dishonour memo",noticeDate:'Must be within 30 days of dishonour memo',deliveryDate:'Date on which the accused received the notice'};
+function setH(id,msg,e){var h=document.getElementById('h-'+id),i=document.getElementById(id);if(!h||!i)return;h.textContent=msg;h.className=e?'hint e':'hint';i.className=e?'ef':''}
+function clrH(){Object.keys(DHINTS).forEach(function(k){setH(k,DHINTS[k],false)})}
+
+function doReset(){
+  ['chequeDate','presentationDate','dishonourDate','noticeDate','deliveryDate','payeeName','drawerName','chequeAmount','chequeNumber','bankName','branchName'].forEach(function(id){var el=document.getElementById(id);if(el){el.value='';el.className=''}});
+  var hn=document.getElementById('h-chequeNumber');if(hn){hn.textContent='Must be exactly 6 digits';hn.className='hint'}
+  var fp=document.getElementById('feePreview');fp.textContent='Enter amount above';fp.style.color='#9C8878';
+  clrH();document.getElementById('results').style.display='none';
+}
+
+function doCalc(){
+  clrH();
+  var cdV=document.getElementById('chequeDate').value,pdV=document.getElementById('presentationDate').value,
+      ddV=document.getElementById('dishonourDate').value,ndV=document.getElementById('noticeDate').value,
+      dvV=document.getElementById('deliveryDate').value;
+  var cnEl=document.getElementById('chequeNumber'),cn=cnEl.value.trim();
+  var ok=true;
+  if(!cdV){setH('chequeDate','Required',true);ok=false}
+  if(!pdV){setH('presentationDate','Required',true);ok=false}
+  if(!ddV){setH('dishonourDate','Required',true);ok=false}
+  if(!ndV){setH('noticeDate','Required',true);ok=false}
+  if(!dvV){setH('deliveryDate','Required',true);ok=false}
+  if(cn.length>0&&cn.length!==6){cnEl.className='ef';document.getElementById('h-chequeNumber').textContent='⚠ Must be exactly 6 digits (entered: '+cn.length+')';document.getElementById('h-chequeNumber').className='hint e';ok=false}
+  if(!ok)return;
+
+  var cd=parseD(cdV),pd=parseD(pdV),dd=parseD(ddV),nd=parseD(ndV),dvd=parseD(dvV);
+  var vEnd=addM(cd,3),nDL=addD(dd,30),ppE=addD(dvd,15),cDL=addD(ppE,30);
+  var presOk=(pd<=vEnd),noticeOk=(nd<=nDL),now=today(),cOpen=(now<=cDL);
+  var dLeft=Math.ceil((cDL-now)/864e5);
+
+  if(!presOk)setH('presentationDate','⚠ Presented AFTER 3-month validity — expired '+fmtS(vEnd),true);
+  if(!noticeOk)setH('noticeDate','⚠ Notice AFTER 30-day window — deadline was '+fmtS(nDL),true);
+
+  var breaches=[];
+  if(!presOk)breaches.push({icon:'📅',title:'Cheque Presentation — Limitation Breached',desc:'Cheque presented on <strong>'+fmtS(pd)+'</strong> after 3-month validity that expired <strong>'+fmtS(vEnd)+'</strong>. Section 138 proviso (a) requires presentation within 3 months. This may render the complaint non-maintainable.'});
+  if(!noticeOk)breaches.push({icon:'📬',title:'Legal Demand Notice — Limitation Breached',desc:'Notice issued <strong>'+fmtS(nd)+'</strong> after the 30-day window from dishonour date <strong>'+fmtS(dd)+'</strong>. Deadline was <strong>'+fmtS(nDL)+'</strong>. Section 138 proviso (b) mandates notice within 30 days.'});
+  if(!cOpen)breaches.push({icon:'⚖️',title:'Complaint Filing — Limitation Period Expired',desc:'The 30-day complaint window expired on <strong>'+fmtS(cDL)+'</strong>. The matter cannot be filed as of right under Section 142. Condonation of delay under Section 142(b) may be sought showing sufficient cause.'});
+  var barred=breaches.length>0;
+
+  document.getElementById('results').style.display='block';
+
+  /* banner */
+  var bnr=document.getElementById('banner'),bEmoji=document.getElementById('bEmoji'),bTitle=document.getElementById('bTitle'),bSub=document.getElementById('bSub'),bBadge=document.getElementById('bBadge');
+  if(barred){bnr.className='banner b-barred';bEmoji.textContent='⚠️';bTitle.textContent='CAUTION — Matter is Out of Limitation';bSub.textContent='One or more limitation periods breached. See details below.';bBadge.textContent='Out of Limitation';bBadge.className='b-badge barred'}
+  else if(cOpen){bnr.className='banner b-open';bEmoji.textContent='✅';bTitle.textContent='All Limitation Periods Satisfied — Complaint Window OPEN';bSub.textContent='Final deadline to file complaint: '+fmtL(cDL);bBadge.textContent=dLeft+' days left';bBadge.className='b-badge open'}
+  else{bnr.className='banner b-lapsed';bEmoji.textContent='🚫';bTitle.textContent='Complaint Filing Window Has Lapsed';bSub.textContent='Final deadline was: '+fmtL(cDL);bBadge.textContent='Expired';bBadge.className='b-badge lapsed'}
+
+  /* limitation warning */
+  var lw=document.getElementById('limWarn');
+  if(barred){
+    lw.style.display='block';
+    var items=breaches.map(function(b){return '<div class="lim-it"><div class="lim-ico">'+b.icon+'</div><div><div class="lim-ttl">'+b.title+'</div><div class="lim-dsc">'+b.desc+'</div></div></div>'}).join('');
+    lw.innerHTML='<div class="lim-card"><div class="lim-hd"><div class="lim-hd-ico">⚠️</div><div><div class="lim-hd-ttl">CAUTION — Matter Appears Out of Limitation</div><div class="lim-hd-sub">'+breaches.length+' limitation breach'+(breaches.length>1?'es':'')+' detected under Section 138 NI Act</div></div></div><div class="lim-bd"><div class="lim-cnt">Breach Details ('+breaches.length+')</div>'+items+'</div><div class="lim-ft"><strong>Important:</strong> These breaches may render the complaint legally non-maintainable or time-barred. Courts may dismiss such complaints at the threshold. In cases of unavoidable delay, condonation may be sought under <strong>Section 142(b)</strong>. It is strongly advised to <strong>consult a qualified advocate</strong> before proceeding.</div></div>';
+  }else{lw.style.display='none';lw.innerHTML=''}
+
+  /* case bar */
+  var payee=document.getElementById('payeeName').value.trim(),drawer=document.getElementById('drawerName').value.trim(),amt=document.getElementById('chequeAmount').value.trim(),bnk=document.getElementById('bankName').value.trim(),brnch=document.getElementById('branchName').value.trim(),cb=document.getElementById('caseBar');
+  if(payee||drawer||amt||cn||bnk||brnch){cb.style.display='flex';var ch='';if(payee)ch+='<div><span class="ci-lbl">Complainant</span><span class="ci-val">'+esc(payee)+'</span></div>';if(drawer)ch+='<div><span class="ci-lbl">Accused / Drawer</span><span class="ci-val">'+esc(drawer)+'</span></div>';if(amt)ch+='<div><span class="ci-lbl">Cheque Amount</span><span class="ci-val">&#8377;'+nf(amt)+'</span></div>';if(cn)ch+='<div><span class="ci-lbl">Cheque No.</span><span class="ci-val">'+esc(cn)+'</span></div>';if(bnk)ch+='<div><span class="ci-lbl">Bank</span><span class="ci-val">'+esc(bnk)+'</span></div>';if(brnch)ch+='<div><span class="ci-lbl">Branch</span><span class="ci-val">'+esc(brnch)+'</span></div>';cb.innerHTML=ch}else{cb.style.display='none'}
+
+  /* court fee */
+  var fcEl=document.getElementById('feeCard');
+  if(amt&&parseFloat(amt)>0){var amtN=parseFloat(amt),feeN=Math.ceil(amtN*0.02);document.getElementById('fcBase').textContent='₹'+nf(amtN);document.getElementById('fcFee').textContent='₹'+nf(feeN);document.getElementById('stMain').textContent='₹'+nf(feeN);fcEl.style.display='flex'}else{fcEl.style.display='none'}
+
+  /* step timeline */
+  var STEPS=[
+    {n:'01',icon:'📄',title:'Cheque Date',col:'#6B8FBF',bg:'#EBF0F8',bdr:'#C5D5EA',date:fmtL(cd),detail:'Cheque validity period: 3 months from this date.',limit:'Valid upto: '+fmtL(vEnd),badge:null},
+    {n:'02',icon:'🏦',title:'Presented to Bank',col:'#8F7BBF',bg:'#F0EDFB',bdr:'#D6CEEE',date:fmtL(pd),detail:'Presentation window runs from cheque date to '+fmtL(vEnd)+'.',limit:null,badge:presOk?'valid':'invalid',blabel:presOk?'Within Validity ✓':'Beyond Validity ✗'},
+    {n:'03',icon:'❌',title:'Memo of Dishonour',col:'#C2706F',bg:'#FAF0EF',bdr:'#EEC9C8',date:fmtL(dd),detail:'Bank returns cheque. 30-day notice clock starts now.',limit:'Notice must be issued on or before: '+fmtL(nDL),badge:null},
+    {n:'04',icon:'📬',title:'Legal Demand Notice Issued',col:'#B8894A',bg:'#FBF5EA',bdr:'#E8D3AC',date:fmtL(nd),detail:'Must be within 30 days of dishonour memo (deadline: '+fmtS(nDL)+').',limit:null,badge:noticeOk?'valid':'invalid',blabel:noticeOk?'Within 30 Days ✓':'Beyond 30 Days ✗'},
+    {n:'05',icon:'✉️',title:'Notice Delivered / Served',col:'#5E9E7E',bg:'#EDF6F1',bdr:'#BCDECE',date:fmtL(dvd),detail:'15-day payment window starts. Accused must pay within this period.',limit:'15-day payment period expires: '+fmtL(ppE),badge:null}
+  ];
+  var lineColors=['#C5D5EA','#D6CEEE','#EEC9C8','#E8D3AC','#BCDECE'];
+  var sc=document.getElementById('stepCards');sc.innerHTML='';
+  STEPS.forEach(function(s,i){
+    var isLast=(i===STEPS.length-1);
+    var bdg=s.badge==='valid'?'<div class="vbadge">'+s.blabel+'</div>':s.badge==='invalid'?'<div class="ibadge">'+s.blabel+'</div>':'';
+    sc.innerHTML+='<div class="step-wrap"><div class="step-conn"><div class="step-dot" style="background:'+s.col+'">'+s.n+'</div>'+(!isLast?'<div class="step-line" style="background:'+lineColors[i]+'"></div>':'')+'</div><div class="step-body" style="background:'+s.bg+';border-color:'+s.bdr+';"><div style="flex:1;min-width:180px"><div class="s-tag" style="color:'+s.col+'">'+s.icon+' Step '+s.n+'</div><div class="s-title" style="color:'+s.col+'">'+s.title+'</div><div class="s-date">'+s.date+'</div><div class="s-detail">'+s.detail+'</div>'+(s.limit?'<div class="s-limit" style="color:'+s.col+'">📍 '+s.limit+'</div>':'')+'</div>'+bdg+'</div></div>';
+  });
+  var fbCls=(barred||!cOpen)?'lapsed':'open',fbTxt=barred?'BARRED':cOpen?'OPEN':'LAPSED';
+  sc.innerHTML+='<div class="step-wrap"><div class="step-conn"><div class="step-dot" style="background:#8F7BBF">06</div></div><div class="final-body"><div style="flex:1;min-width:180px"><div><span class="f-tag">Step 06 · Complaint</span></div><div class="f-title">File Complaint before Judicial Magistrate</div><div class="f-line">Window opens after 15-day payment period: '+fmtL(ppE)+'</div><div class="f-line">Must be filed on or before:</div><div class="f-date">'+fmtL(cDL)+'</div></div><div class="f-badge '+fbCls+'"><div class="fb-lbl">Status</div><div class="fb-val '+fbCls+'">'+fbTxt+'</div>'+(!barred&&cOpen?'<div class="fb-days">'+dLeft+' days left</div>':'')+'</div></div></div>';
+
+  /* summary table */
+  var feeRow='';
+  if(amt&&parseFloat(amt)>0)feeRow='<tr class="tr-fee"><td class="td-fee">🏛️ Court Fee Stamp</td><td class="td-fee">&#8377;'+nf(Math.ceil(parseFloat(amt)*0.02))+'</td><td style="color:#A07840">@ 2% of cheque amount</td><td style="color:#A07840">Affix on complaint</td></tr>';
+  var rows=[
+    {e:'Cheque Date',a:fmtS(cd),dl:'Valid till: '+fmtS(vEnd),st:'—',w:false,hl:false},
+    {e:'Cheque Presented',a:fmtS(pd),dl:'Validity end: '+fmtS(vEnd),st:presOk?'✓ OK':'✗ LAPSED',w:!presOk,hl:false},
+    {e:'Memo of Dishonour',a:fmtS(dd),dl:'Notice due by: '+fmtS(nDL),st:'—',w:false,hl:false},
+    {e:'Legal Notice Issued',a:fmtS(nd),dl:'Deadline was: '+fmtS(nDL),st:noticeOk?'✓ OK':'✗ LAPSED',w:!noticeOk,hl:false},
+    {e:'Notice Delivered',a:fmtS(dvd),dl:'Payment window ends: '+fmtS(ppE),st:'—',w:false,hl:false},
+    {e:'Complaint Deadline',a:'—',dl:fmtS(cDL),st:cOpen?'✓ OPEN':'✗ EXPIRED',w:!cOpen,hl:true}
+  ];
+  document.getElementById('sumBody').innerHTML=feeRow+rows.map(function(r,i){
+    var cls=r.hl?'tr-hl':(i%2===0?'tr-even':'tr-odd');
+    return '<tr class="'+cls+'"><td style="font-weight:'+(r.hl?'700':'normal')+'">'+r.e+'</td><td>'+r.a+'</td><td class="'+(r.w?'td-warn':'')+'">'+r.dl+'</td><td class="'+(r.w?'td-warn':r.hl&&!r.w?'td-acc':'')+'">'+r.st+'</td></tr>';
+  }).join('');
+
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+
+/* ══════════════════════════════
+   TAB 2 — ACTION DATE PLANNER
+══════════════════════════════ */
+function doPlanReset(){
+  ['p-chqDate','p-dishDate','p-payee','p-drawer','p-amt'].forEach(function(id){var el=document.getElementById(id);if(el){el.value='';el.className=''}});
+  ['h-p-chqDate','h-p-dishDate'].forEach(function(id){var el=document.getElementById(id);if(el){el.textContent=id==='h-p-chqDate'?'Date printed on the cheque':"Date of the bank's return memo";el.className='hint'}});
+  document.getElementById('planResults').style.display='none';
+}
+
+function urgencyColor(dLeft){
+  if(dLeft<0)  return {bg:'#FAF0EF',bdr:'#EEC9C8',txt:'#C2706F',label:'EXPIRED'};
+  if(dLeft<=5) return {bg:'#FFF4EE',bdr:'#F0C0A0',txt:'#C85A1A',label:'URGENT'};
+  if(dLeft<=14)return {bg:'#FFFBEA',bdr:'#F0D890',txt:'#A07020',label:'ACT SOON'};
+  return       {bg:'#EDF6F1',bdr:'#BCDECE',txt:'#5E9E7E',label:'ON TRACK'};
+}
+
+function doPlan(){
+  var cdV=document.getElementById('p-chqDate').value,ddV=document.getElementById('p-dishDate').value;
+  var ok=true;
+  if(!cdV){document.getElementById('h-p-chqDate').textContent='Required';document.getElementById('h-p-chqDate').className='hint e';document.getElementById('p-chqDate').className='ef';ok=false}
+  if(!ddV){document.getElementById('h-p-dishDate').textContent='Required';document.getElementById('h-p-dishDate').className='hint e';document.getElementById('p-dishDate').className='ef';ok=false}
+  if(!ok)return;
+
+  var cd=parseD(cdV),dd=parseD(ddV);
+  if(dd<cd){document.getElementById('h-p-dishDate').textContent='⚠ Dishonour date cannot be before cheque date';document.getElementById('h-p-dishDate').className='hint e';document.getElementById('p-dishDate').className='ef';return}
+
+  var now=today();
+
+  /* ── All computed dates ── */
+  var chqValidEnd  = addM(cd,3);              /* Latest: present cheque */
+  var noticeDL     = addD(dd,30);             /* Latest: issue notice   */
+  /* Worst-case: notice issued on Day 30 & delivered same day → payment period Day 31-45 */
+  var ppStart_early= addD(dd,1);              /* Earliest payment period start (notice Day 1 + delivery) */
+  var ppStart_late = addD(noticeDL,1);        /* Latest payment period start  (notice Day 30 + delivery) */
+  var ppEnd_early  = addD(ppStart_early,15);  /* Earliest payment period end  */
+  var ppEnd_late   = addD(ppStart_late,15);   /* Latest payment period end    */
+  var complaint_earliest = addD(ppEnd_early,1);  /* Earliest complaint date  */
+  var complaint_latest   = addD(ppEnd_late,30);  /* Absolute last complaint date */
+
+  /* ── ACTIONS array ── */
+  var ACTIONS=[
+    {
+      num:'01',icon:'🏦',title:'Present Cheque to Bank',
+      color:'#6B8FBF',bg:'#EBF0F8',bdr:'#C5D5EA',lineColor:'#C5D5EA',
+      rule:'Cheque must be presented to the bank within 3 months from the date of the cheque.',
+      from:cd, to:chqValidEnd,
+      fromLbl:'From cheque date',toLbl:'Last date to present',
+      daysLeft:daysBetween(now,chqValidEnd),
+      window:daysBetween(cd,chqValidEnd)
+    },
+    {
+      num:'02',icon:'📬',title:'Issue Legal Demand Notice',
+      color:'#C2706F',bg:'#FAF0EF',bdr:'#EEC9C8',lineColor:'#EEC9C8',
+      rule:'A legal demand notice must be sent to the drawer within 30 days from the date of the dishonour memo.',
+      from:dd, to:noticeDL,
+      fromLbl:'From dishonour memo date',toLbl:'Last date to send notice',
+      daysLeft:daysBetween(now,noticeDL),
+      window:30
+    },
+    {
+      num:'03',icon:'⏳',title:'Await Payment from Accused',
+      color:'#5E9E7E',bg:'#EDF6F1',bdr:'#BCDECE',lineColor:'#BCDECE',
+      rule:'After receipt of notice, the accused has 15 days to make payment. You must wait this full period before filing a complaint.',
+      from:ppStart_early, to:ppEnd_late,
+      fromLbl:'Earliest payment period start',toLbl:'Latest payment period end',
+      daysLeft:daysBetween(now,ppEnd_late),
+      window:15,
+      note:'Exact window depends on when notice is delivered (Day 1–'+daysBetween(dd,noticeDL)+' after dishonour)'
+    },
+    {
+      num:'04',icon:'⚖️',title:'File Complaint before Magistrate',
+      color:'#8F7BBF',bg:'#F0EDFB',bdr:'#D6CEEE',lineColor:'#D6CEEE',
+      rule:'If the accused fails to pay within 15 days of notice receipt, you must file a complaint before the Judicial Magistrate within 30 days after the 15-day payment period expires.',
+      from:complaint_earliest, to:complaint_latest,
+      fromLbl:'Earliest filing date',toLbl:'ABSOLUTE LAST DATE to file',
+      daysLeft:daysBetween(now,complaint_latest),
+      window:30,
+      note:'File as soon as possible after the 15-day payment period expires'
+    }
+  ];
+
+  /* ── SHOW RESULTS ── */
+  document.getElementById('planResults').style.display='block';
+
+  /* Banner */
+  var pb=document.getElementById('planBanner'),pbt=document.getElementById('planBTitle'),pbs=document.getElementById('planBSub');
+  var allGood=ACTIONS.every(function(a){return a.daysLeft>=0});
+  if(allGood){pb.className='banner b-open';pbt.style.color='#2A6070'}else{pb.className='banner b-lapsed';pbt.style.color='#A3514F'}
+  pbt.textContent=allGood?'Action Plan Generated — All Deadlines Ahead':'⚠ Some Deadlines Have Passed';
+  pbs.textContent='Cheque Date: '+fmtS(cd)+' · Dishonour Date: '+fmtS(dd)+' · Absolute last date to file complaint: '+fmtS(complaint_latest);
+
+  /* Case bar */
+  var payee=document.getElementById('p-payee').value.trim(),drawer=document.getElementById('p-drawer').value.trim(),amt=document.getElementById('p-amt').value.trim();
+  var pcb=document.getElementById('planCaseBar');
+  if(payee||drawer||amt){
+    pcb.style.display='flex';var ch='';
+    if(payee) ch+='<div><span class="ci-lbl">Complainant</span><span class="ci-val">'+esc(payee)+'</span></div>';
+    if(drawer)ch+='<div><span class="ci-lbl">Accused / Drawer</span><span class="ci-val">'+esc(drawer)+'</span></div>';
+    if(amt&&parseFloat(amt)>0){var feeN2=Math.ceil(parseFloat(amt)*0.02);ch+='<div><span class="ci-lbl">Cheque Amount</span><span class="ci-val">&#8377;'+nf(amt)+'</span></div>';ch+='<div><span class="ci-lbl">Court Fee (2%)</span><span class="ci-val" style="color:#B8894A">&#8377;'+nf(feeN2)+'</span></div>'}
+    pcb.innerHTML=ch;
+  }else{pcb.style.display='none'}
+
+  /* Countdown chips */
+  var chips=[
+    {ico:'🏦',val:Math.max(0,daysBetween(now,chqValidEnd)),lbl:'Days to present cheque',col:'#6B8FBF',bg:'#EBF0F8',expired:daysBetween(now,chqValidEnd)<0},
+    {ico:'📬',val:Math.max(0,daysBetween(now,noticeDL)),lbl:'Days to send notice',col:'#C2706F',bg:'#FAF0EF',expired:daysBetween(now,noticeDL)<0},
+    {ico:'⚖️',val:Math.max(0,daysBetween(now,complaint_latest)),lbl:'Days to file complaint',col:'#8F7BBF',bg:'#F0EDFB',expired:daysBetween(now,complaint_latest)<0}
+  ];
+  document.getElementById('planChips').innerHTML=chips.map(function(c){
+    return '<div class="chip" style="background:'+c.bg+';border:1.5px solid '+(c.expired?'#EEC9C8':c.col+'44')+'"><div class="chip-ico">'+c.ico+'</div><div class="chip-val" style="color:'+(c.expired?'#C2706F':c.col)+'">'+(c.expired?'EXPIRED':c.val)+'</div><div class="chip-lbl" style="color:'+(c.expired?'#C2706F':'#9C8878')+'">'+c.lbl+'</div></div>';
+  }).join('');
+
+  /* Action cards */
+  document.getElementById('planCards').innerHTML=ACTIONS.map(function(a){
+    var u=urgencyColor(a.daysLeft);
+    var dStr=a.daysLeft<0?'EXPIRED':(a.daysLeft===0?'TODAY IS THE LAST DAY':a.daysLeft+' days remaining');
+    return '<div class="action-card" style="background:'+a.bg+';border-color:'+a.bdr+'">'
+      +'<div class="ac-num" style="background:'+a.color+'">'+a.num+'</div>'
+      +'<div class="ac-tag" style="color:'+a.color+'">'+a.icon+' Action '+a.num+'</div>'
+      +'<div class="ac-title" style="color:'+a.color+'">'+a.title+'</div>'
+      +'<div class="ac-rule">'+a.rule+'</div>'
+      +'<div class="ac-range-lbl" style="color:'+a.color+'">Date Range</div>'
+      +'<div class="ac-from" style="color:'+a.color+'">'+fmtS(a.from)+'</div>'
+      +'<div class="ac-arrow">↓</div>'
+      +'<div class="ac-to" style="color:'+a.color+'">'+fmtS(a.to)+'</div>'
+      +(a.note?'<div style="font-size:11px;color:#9C8878;margin-top:6px;line-height:1.4">ℹ '+a.note+'</div>':'')
+      +'<div><span class="ac-urgent" style="background:'+u.bg+';border:1px solid '+u.bdr+';color:'+u.txt+'">'+u.label+'</span></div>'
+      +'<div class="ac-days-left" style="color:'+u.txt+'">'+dStr+'</div>'
+      +'</div>';
+  }).join('');
+
+  /* Visual timeline bar */
+  var allEvents=[
+    {date:cd,          lbl:'Cheque Date',        sub:'Start',                            dotColor:'#6B8FBF', lineColor:'#C5D5EA'},
+    {date:dd,          lbl:'Dishonour Memo',      sub:'Clock starts for notice',          dotColor:'#C2706F', lineColor:'#EEC9C8'},
+    {date:noticeDL,    lbl:'Notice Deadline',     sub:'Send notice by this date',         dotColor:'#C2706F', lineColor:'#E8D3AC'},
+    {date:chqValidEnd, lbl:'Cheque Validity End', sub:'Last date to present cheque',      dotColor:'#6B8FBF', lineColor:'#E8D3AC'},
+    {date:ppEnd_late,  lbl:'Payment Period End',  sub:'15 days after latest notice delivery', dotColor:'#5E9E7E', lineColor:'#BCDECE'},
+    {date:complaint_latest, lbl:'Complaint Deadline', sub:'⚠ ABSOLUTE LAST DATE TO FILE', dotColor:'#8F7BBF', lineColor:null},
+  ];
+  /* sort by date */
+  allEvents.sort(function(a,b){return a.date-b.date});
+  /* add today if in range */
+  var todayInRange=(now>=cd && now<=complaint_latest);
+
+  var tbH='';
+  allEvents.forEach(function(ev,i){
+    var isLast=i===allEvents.length-1;
+    var isPast=ev.date<now;
+    var isToday=daysBetween(now,ev.date)===0;
+    tbH+='<div class="tb-item">'
+      +'<div class="tb-left"><div class="tb-date-txt"'+(isPast?' style="color:#9C8878"':isToday?' style="color:#C85A1A;font-weight:700"':'')+'>'+fmtDay(ev.date)+'</div><div class="tb-date-sub">'+fmtS(ev.date)+'</div></div>'
+      +'<div class="tb-center"><div class="tb-dot" style="background:'+(isPast?'#CCC4BB':isToday?'#C85A1A':ev.dotColor)+'">'+(isToday?'●':'')+'</div>'
+      +(!isLast?'<div class="tb-vline" style="background:'+(isPast?'#DDD5CB':ev.lineColor||'#E2D9CF')+'"></div>':'')+'</div>'
+      +'<div class="tb-right"><div class="tb-r-lbl"'+(isPast?' style="color:#9C8878"':isToday?' style="color:#C85A1A"':'')+'>'+(isToday?'📍 ':'')+ev.lbl+'</div><div class="tb-r-sub">'+ev.sub+'</div>'
+      +(isPast&&!isToday?'<div style="font-size:11px;color:#9C8878;margin-top:2px">✓ Past</div>':'')
+      +'</div></div>';
+  });
+  document.getElementById('tbTrack').innerHTML=tbH;
+
+  /* Key dates table */
+  var tableRows=ACTIONS.map(function(a,i){
+    var u=urgencyColor(a.daysLeft);
+    var cls=i%2===0?'':'style="background:#FFFCF9"';
+    return '<tr '+cls+'>'
+      +'<td style="font-weight:700;color:'+a.color+'">'+(i+1)+'</td>'
+      +'<td style="font-weight:600">'+a.icon+' '+a.title+'</td>'
+      +'<td>'+fmtS(a.from)+'</td>'
+      +'<td style="font-weight:700;color:'+(a.daysLeft<0?'#C2706F':'#3A2F27')+'">'+fmtS(a.to)+'</td>'
+      +'<td>'+a.window+' days</td>'
+      +'<td><span class="kd-urgency" style="background:'+u.bg+';border:1px solid '+u.bdr+';color:'+u.txt+'">'+u.label+'</span></td>'
+      +'</tr>';
+  });
+  document.getElementById('planTable').innerHTML=tableRows.join('');
+
+  document.getElementById('planResults').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
