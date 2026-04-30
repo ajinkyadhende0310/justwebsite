@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+<meta name="description" content="Free Maharashtra Stamp Duty & Registration Fee Calculator. Calculate exact stamp duty, registration charges, and document handling fees for property registration in Pune & Maharashtra. Easy estimate tool for sale deed, gift deed, mortgage deed."><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.dhendeassociates.com/msdr.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maharashtra Stamp Duty & Registration Fee Calculator">
+<meta property="og:description" content="Free Maharashtra Stamp Duty & Registration Fee Calculator. Calculate exact stamp duty, registration charges, and document handling fees for property registration in Pune & Maharashtra.">
+<meta property="og:url" content="https://www.dhendeassociates.com/msdr.html">
+<meta property="og:image" content="https://www.dhendeassociates.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maharashtra Stamp Duty & Registration Fee Calculator">
+<meta name="twitter:description" content="Free Maharashtra Stamp Duty & Registration Fee Calculator. Calculate exact stamp duty, registration charges, and document handling fees for property registration.">
+<meta name="twitter:image" content="https://www.dhendeassociates.com/og-image.png">
+<meta name="keywords" content="advocate for registration of property pune, sale deed, gift deed, mortgage deed, partition deed, partnership deed, Top lawyer Pune, HIGH COURT ADVOCATES, motor accident claim, insurance lawyer, property law, notary public, criminal lawyer, civil litigation, legal consultant, legal advice, legal services, Pune law firm, Maharashtra advocate, legal representation, legal consultation, legal document drafting, legal dispute resolution, 
+legal aid, legal support, legal guidance, legal expertise, legal counsel, legal assistance, 
+legal advice in Pune, notice drafting service Pune, RTI filing advocate Pune, Document drafting lawyer Pune, Legal heir certificate advocate Pune, Will drafting lawyer Pune, NRI property legal help Pune, Notary public near me Pune, Property registration advocate Pune,
+Sale deed lawyer Pune, Title verification advocate Pune, Property dispute resolution Pune, 
+most affordable legal services Pune
+best legal services Pune
+top legal services Pune
+experienced advocate Pune,
+trusted lawyer Pune,
+legal consultation Pune,
+legal advice Pune,
+legal representation Pune,
+legal services Pune,
+legal assistance Pune,
+legal support Pune,
+legal guidance Pune,
+legal expertise Pune,
+legal counsel Pune,
+due deligence, property verification, property title search, property dispute resolution, property registration, sale deed, gift deed, mortgage deed, partition deed, partnership deed, legal heir certificate, will drafting, NRI property legal help, notary public services Pune,
+most trusted and affordable legal services Pune, 
+stampduty calculation Pune, registration fee calculation Pune, document handling charges Pune,
+know your stamp duty Pune, property registration charges Pune,
+ready reckoner rate Pune, stamp duty rates Pune, property registration process Pune, property registration advocate Pune,
+easy estimate of stamp duty and registration charges Pune,
+best legal services Pune,
+top legal services Pune,
+experienced advocate Pune,
+trusted lawyer Pune,
+legal consultation Pune,
+legal advice Pune,
+legal representation Pune,
+legal services Pune,
+legal assistance Pune,
+legal support,
+legal guidance,
+legal expertise,
+legal counsel, exact stamp duty calculation, exact registration fee calculation, exact document handling charges, accurate stamp duty estimate, accurate registration fee estimate, accurate document handling charges estimate
+legal tool for stamp duty calculation, IGR maharashtra calculator"/>
+    <title> Maharashtra Stamp Duty, Registration and Document Handling charges Estimate</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style-msdr.css">
+</head>
+<body>
+    <div id="root"></div>
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons" style="margin: 20px; display: flex; justify-content: center; gap: 10px;">
+        <button onclick="window.history.back()" style="background: rgb(60, 16, 113); padding: 8px 12px; border-radius: 6px; box-shadow: 0 2px 8px rgb(32, 6, 81); font-size: 10px; text-decoration: none; color: #d69b5c; display: center ; align-items: center; gap: 6px;">Back</button>
+    </div>  
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function StampDutyCalculator() {
+            // Form states
+            const [documentType, setDocumentType] = useState('sale');
+            const [locationType, setLocationType] = useState('municipal_corp');
+            const [city, setCity] = useState('mumbai');
+            const [gender, setGender] = useState('male');
+            const [propertyValue, setPropertyValue] = useState('');
+            const [readyReckonerRate, setReadyReckonerRate] = useState('');
+            const [giftType, setGiftType] = useState('general');
+            
+            // Leave and License specific fields
+            const [monthlyRent, setMonthlyRent] = useState('');
+            const [leaseDuration, setLeaseDuration] = useState('');
+            const [refundableDeposit, setRefundableDeposit] = useState('');
+            const [nonRefundableDeposit, setNonRefundableDeposit] = useState('');
+            const [interestRate, setInterestRate] = useState('10');
+            
+            // Document handling charges
+            const [numberOfPages, setNumberOfPages] = useState('');
+            
+            // Results state
+            const [results, setResults] = useState(null);
+            const [showMetroCess, setShowMetroCess] = useState(true);
+            const [showLocalBodyTax, setShowLocalBodyTax] = useState(true);
+
+            // Update metro cess and local body tax visibility based on city
+            useEffect(() => {
+                const metroCitiesCities = ['mumbai', 'pune', 'thane', 'nagpur'];
+                setShowMetroCess(metroCitiesCities.includes(city) && locationType === 'municipal_corp');
+                setShowLocalBodyTax(locationType === 'municipal_corp');
+            }, [city, locationType]);
+
+            const calculateStampDuty = () => {
+                // For will, no property value needed
+                if (documentType === 'will') {
+                    const pages = parseFloat(numberOfPages) || 1;
+                    const documentHandlingCharges = pages * 40;
+                    const totalAmount = 100 + documentHandlingCharges;
+                    
+                    setResults({
+                        baseValue: '0',
+                        stampDutyRate: '0',
+                        stampDuty: '0',
+                        metroCess: '0',
+                        localBodyTax: '0',
+                        totalStampDuty: '0',
+                        registrationFee: '100',
+                        documentHandlingCharges: documentHandlingCharges.toFixed(2),
+                        totalAmount: totalAmount.toFixed(2),
+                        showMetroCess: false,
+                        showLocalBodyTax: false
+                    });
+                    return;
+                }
+
+                // For reconveyance, fixed fees regardless of amount
+                if (documentType === 'reconveyance') {
+                    const pages = parseFloat(numberOfPages) || 1;
+                    const documentHandlingCharges = pages * 40;
+                    const totalAmount = 600 + documentHandlingCharges;
+                    
+                    setResults({
+                        baseValue: propertyValue || '0',
+                        stampDutyRate: '0',
+                        stampDuty: '500',
+                        metroCess: '0',
+                        localBodyTax: '0',
+                        totalStampDuty: '500',
+                        registrationFee: '100',
+                        documentHandlingCharges: documentHandlingCharges.toFixed(2),
+                        totalAmount: totalAmount.toFixed(2),
+                        showMetroCess: false,
+                        showLocalBodyTax: false
+                    });
+                    return;
+                }
+
+                // For power of attorney, fixed fees
+                if (documentType === 'power_of_attorney') {
+                    const pages = parseFloat(numberOfPages) || 1;
+                    const documentHandlingCharges = pages * 40;
+                    const totalAmount = 600 + documentHandlingCharges; // 500 stamp duty + 100 registration
+                    
+                    setResults({
+                        baseValue: '0',
+                        stampDutyRate: '0',
+                        stampDuty: '500',
+                        metroCess: '0',
+                        localBodyTax: '0',
+                        totalStampDuty: '500',
+                        registrationFee: '100',
+                        documentHandlingCharges: documentHandlingCharges.toFixed(2),
+                        totalAmount: totalAmount.toFixed(2),
+                        showMetroCess: false,
+                        showLocalBodyTax: false
+                    });
+                    return;
+                }
+
+                // For leave and license agreement
+                if (documentType === 'leave_license') {
+                    if (!monthlyRent || !leaseDuration || parseFloat(monthlyRent) <= 0 || parseFloat(leaseDuration) <= 0) {
+                        alert('Please enter valid monthly rent and lease duration');
+                        return;
+                    }
+
+                    const rent = parseFloat(monthlyRent);
+                    const duration = parseFloat(leaseDuration);
+                    const refDeposit = parseFloat(refundableDeposit) || 0;
+                    const nonRefDeposit = parseFloat(nonRefundableDeposit) || 0;
+                    const intRate = parseFloat(interestRate) || 10;
+
+                    // Calculate total rent for the duration
+                    const totalRent = rent * duration;
+                    
+                    // Calculate notional interest on refundable deposit
+                    // Interest for the duration in years
+                    const durationInYears = duration / 12;
+                    const notionalInterest = refDeposit * (intRate / 100) * durationInYears;
+                    
+                    // Base value for stamp duty calculation
+                    const baseValue = totalRent + nonRefDeposit + notionalInterest;
+                    
+                    // Stamp duty: 0.25% of base value
+                    const stampDuty = baseValue * 0.0025;
+                    
+                    // Registration fee based on location
+                    let registrationFee = 0;
+                    if (locationType === 'municipal_corp' || locationType === 'municipal_council') {
+                        registrationFee = 1000;
+                    } else {
+                        registrationFee = 500;
+                    }
+                    
+                    // Fixed document handling charges for leave and license
+                    const documentHandlingCharges = 300;
+                    
+                    const totalAmount = stampDuty + registrationFee + documentHandlingCharges;
+
+                    setResults({
+                        baseValue: baseValue.toFixed(2),
+                        stampDutyRate: '0.25',
+                        stampDuty: stampDuty.toFixed(2),
+                        metroCess: '0',
+                        localBodyTax: '0',
+                        totalStampDuty: stampDuty.toFixed(2),
+                        registrationFee: registrationFee.toFixed(2),
+                        documentHandlingCharges: documentHandlingCharges.toFixed(2),
+                        totalAmount: totalAmount.toFixed(2),
+                        showMetroCess: false,
+                        showLocalBodyTax: false,
+                        leaveAndLicenseBreakdown: {
+                            totalRent: totalRent.toFixed(2),
+                            notionalInterest: notionalInterest.toFixed(2),
+                            nonRefDeposit: nonRefDeposit.toFixed(2)
+                        }
+                    });
+                    return;
+                }
+
+                if (!propertyValue || parseFloat(propertyValue) <= 0) {
+                    alert('Please enter a valid property value');
+                    return;
+                }
+
+                const propValue = parseFloat(propertyValue);
+                const rrrValue = readyReckonerRate ? parseFloat(readyReckonerRate) : propValue;
+                
+                // Use higher of property value or ready reckoner rate
+                const baseValue = Math.max(propValue, rrrValue);
+
+                let stampDutyRate = 0;
+                let registrationFee = 0;
+                let metroCess = 0;
+                let localBodyTax = 0;
+
+                // Calculate based on document type
+                if (documentType === 'sale' || documentType === 'agreement_to_sale') {
+                    // Sale Deed and Agreement to Sale calculations (same rates)
+                    if (locationType === 'municipal_corp') {
+                        stampDutyRate = gender === 'female' ? 0.04 : 0.05;
+                        
+                        // Add metro cess for metro cities
+                        if (showMetroCess) {
+                            metroCess = 0.01;
+                        }
+                        
+                        // Add local body tax for municipal corporations
+                        localBodyTax = 0.01;
+                    } else if (locationType === 'municipal_council') {
+                        stampDutyRate = gender === 'female' ? 0.03 : 0.04;
+                    } else if (locationType === 'gram_panchayat') {
+                        stampDutyRate = gender === 'female' ? 0.02 : 0.03;
+                    }
+
+                    // Registration fee calculation
+                    if (baseValue > 3000000) {
+                        registrationFee = 30000;
+                    } else {
+                        registrationFee = baseValue * 0.01;
+                    }
+                } else if (documentType === 'gift') {
+                    // Gift Deed calculations
+                    if (giftType === 'family') {
+                        stampDutyRate = 200 / baseValue; // Fixed ₹200
+                        registrationFee = 200; // Fixed ₹200 for family members
+                    } else {
+                        stampDutyRate = 0.03; // 3% for general gift
+                        registrationFee = baseValue > 3000000 ? 30000 : baseValue * 0.01;
+                    }
+                    
+                    // Add local body tax and metro cess for gift deeds in municipal corporations
+                    if (locationType === 'municipal_corp') {
+                        localBodyTax = 0.01;
+                        
+                        // Add metro cess for metro cities
+                        if (showMetroCess) {
+                            metroCess = 0.01;
+                        }
+                    }
+                } else if (documentType === 'mortgage') {
+                    // Mortgage Deed calculations
+                    stampDutyRate = 0.003; // 0.3%
+                    
+                    // Registration fee: 0.5% or max Rs 15,000
+                    const calculatedRegFee = baseValue * 0.005;
+                    registrationFee = Math.min(calculatedRegFee, 15000);
+                }
+
+                const stampDuty = baseValue * stampDutyRate;
+                const metroCessAmount = baseValue * metroCess;
+                const localBodyTaxAmount = baseValue * localBodyTax;
+                const totalStampDuty = stampDuty + metroCessAmount + localBodyTaxAmount;
+                
+                // Document handling charges: Rs 40 per page
+                const pages = parseFloat(numberOfPages) || 1;
+                const documentHandlingCharges = pages * 40;
+                
+                const totalAmount = totalStampDuty + registrationFee + documentHandlingCharges;
+
+                setResults({
+                    baseValue: baseValue.toFixed(2),
+                    stampDutyRate: (stampDutyRate * 100).toFixed(2),
+                    stampDuty: stampDuty.toFixed(2),
+                    metroCess: metroCessAmount.toFixed(2),
+                    localBodyTax: localBodyTaxAmount.toFixed(2),
+                    totalStampDuty: totalStampDuty.toFixed(2),
+                    registrationFee: registrationFee.toFixed(2),
+                    documentHandlingCharges: documentHandlingCharges.toFixed(2),
+                    totalAmount: totalAmount.toFixed(2),
+                    showMetroCess: metroCessAmount > 0,
+                    showLocalBodyTax: localBodyTaxAmount > 0
+                });
+            };
+
+            const formatCurrency = (amount) => {
+                return new Intl.NumberFormat('en-IN', {
+                    style: 'currency',
+                    currency: 'INR',
+                    maximumFractionDigits: 0
+                }).format(amount);
+            };
+
+            const resetForm = () => {
+                setDocumentType('sale');
+                setLocationType('municipal_corp');
+                setCity('mumbai');
+                setGender('male');
+                setPropertyValue('');
+                setReadyReckonerRate('');
+                setGiftType('general');
+                setMonthlyRent('');
+                setLeaseDuration('');
+                setRefundableDeposit('');
+                setNonRefundableDeposit('');
+                setInterestRate('10');
+                setNumberOfPages('');
+                setResults(null);
+            };
+
+            return (
+                <div className="min-h-screen bg-gradient-to-br from-purple-00 via-pink-0 to-blue-300">
+                    {/* Header */}
+                    <div className="bg-gradient-to-r from-purple-900 to-pink-00 text-white shadow-lg">
+                        <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6">
+                           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                                <div className="flex items-start sm:items-center gap-2 sm:gap-3">
+                                   <div className="nav-inner">
+                                <a href="index.html#home">
+                                    <img width="40" height="40" src="favicon.png" alt="Dhende Associates Logo" class="nav-logo"  onclick="window.location.href='index.html#home'"/>
+                                </a></div>
+                                    <i className="fas fa-landmark text-xl sm:text-3xl flex-shrink-0 mt-1 sm:mt-0"></i>
+                                    <div>
+                                        <h1 className="text-base sm:text-xl md:text-2xl font-bold leading-tight">Maharashtra Stamp Duty, Registration & Document Charges</h1>
+                                        <p className="text-purple-100 text-xs sm:text-sm">Based on IGR Maharashtra Guidelines</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8 max-w-7xl">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
+                            {/* Input Form */}
+                            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-200">
+                                <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                                    <i className="fas fa-calculator text-purple-500 text-lg sm:text-2xl flex-shrink-0"></i>
+                                    <span>Property Details</span>
+                                </h2>
+
+                                <div className="space-y-4 sm:space-y-5">
+                                    {/* Document Type */}
+                                    <div>
+                                        <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
+                                            Document Type
+                                        </label>
+                                        <select 
+                                            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-300 rounded-lg focus:border-purple-400 focus:ring-2 focus:ring-purple-200 transition-all text-sm sm:text-base"
+                                            value={documentType}
+                                            onChange={(e) => setDocumentType(e.target.value)}
+                                        >
+                                            <option value="sale">Sale Deed (Conveyance)</option>
+                                            <option value="gift">Gift Deed</option>
+                                            <option value="leave_license">Leave and License Agreement</option>
+                                            <option value="mortgage">Mortgage Deed</option>
+                                            <option value="power_of_attorney">Power of Attorney</option>
+                                            <option value="will">Will (Testament)</option>
+                                            <option value="reconveyance">Reconveyance Deed</option>
+                                            <option value="agreement_to_sale">Agreement to Sale</option>
+                                        </select>
+                                        {documentType === 'power_of_attorney' && (
+                                            <p className="text-xs text-teal-600 mt-2 bg-teal-50 p-2 rounded">
+                                                <i className="fas fa-info-circle"></i> Power of Attorney: Fixed ₹500 stamp duty + ₹100 registration fee. No metro cess or local body tax.
+                                            </p>
+                                        )}
+                                        {documentType === 'agreement_to_sale' && (
+                                            <p className="text-xs text-purple-600 mt-2 bg-purple-50 p-2 rounded">
+                                                <i className="fas fa-info-circle"></i> Agreement to Sale has the same stamp duty rates as Sale Deed, including local body tax and metro cess
+                                            </p>
+                                        )}
+                                        {documentType === 'leave_license' && (
+                                            <p className="text-xs text-indigo-600 mt-2 bg-indigo-50 p-2 rounded">
+                                                <i className="fas fa-info-circle"></i> Leave and License: 0.25% stamp duty on total rent + deposits + notional interest. Mandatory registration.
+                                            </p>
+                                        )}
+                                        {documentType === 'mortgage' && (
+                                            <p className="text-xs text-purple-500 mt-2 bg-blue-50 p-2 rounded">
+                                                <i className="fas fa-info-circle"></i> Mortgage deeds have a flat 0.3% stamp duty rate regardless of location or buyer gender
+                                            </p>
+                                        )}
+                                        {documentType === 'will' && (
+                                            <p className="text-xs text-teal-500 mt-2 bg-green-50 p-2 rounded">
+                                                <i className="fas fa-info-circle"></i> Will registration requires only a fixed fee of ₹100. No stamp duty or property value needed.
+                                            </p>
+                                        )}
+                                        {documentType === 'reconveyance' && (
+                                            <p className="text-xs text-purple-600 mt-2 bg-purple-50 p-2 rounded">
+                                                <i className="fas fa-info-circle"></i> Reconveyance deed: Fixed ₹500 stamp duty + ₹100 registration fee
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    {/* Gift Type (only for gift deeds) */}
+                                    {documentType === 'gift' && (
+                                        <div className="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded">
+                                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
+                                                Gift Type
+                                            </label>
+                                            <select 
+                                                className="w-full px-3 sm:px-4 py-2 sm:py-2.5 border-2 border-gray-300 rounded-lg focus:border-purple-400 text-sm sm:text-base"
+                                                value={giftType}
+                                                onChange={(e) => setGiftType(e.target.value)}
+                                            >
+                                                <option value="family">Family Members (₹200 stamp duty + ₹200 registration)</option>
+                                                <option value="general">General (3% + 1% registration fee)</option>
+                                            </select>
+                                        </div>
+                                    )}
+
+                                    {/* Location Type */}
+                                    {documentType !== 'mortgage' && documentType !== 'will' && documentType !== 'reconveyance' && documentType !== 'power_of_attorney' && (
+                                        <div>
+                                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
+                                                Location Type
+                                            </label>
+                                            <select 
+                                                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-300 rounded-lg focus:border-purple-400 focus:ring-2 focus:ring-purple-200 transition-all text-sm sm:text-base"
+                                                value={locationType}
+                                                onChange={(e) => setLocationType(e.target.value)}
+                                            >
+                                                <option value="municipal_corp">Municipal Corporation</option>
+                                                <option value="municipal_council">Municipal Council</option>
+                                                <option value="gram_panchayat">Gram Panchayat</option>
+                                            </select>
+                                        </div>
+                                    )}
+
+                                    {/* City Selection (for metro cess) */}
+                                    {locationType === 'municipal_corp' && documentType !== 'mortgage' && documentType !== 'will' && documentType !== 'reconveyance' && documentType !== 'power_of_attorney' && (
+                                        <div>
+                                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
+                                                City
+                                            </label>
+                                            <select 
+                                                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-300 rounded-lg focus:border-purple-400 focus:ring-2 focus:ring-purple-200 transition-all text-sm sm:text-base"
+                                                value={city}
+                                                onChange={(e) => setCity(e.target.value)}
+                                            >
+                                                <option value="mumbai">Mumbai</option>
+                                                <option value="pune">Pune</option>
+                                                <option value="thane">Thane</option>
+                                                <option value="nagpur">Nagpur</option>
+                                                <option value="other">Other Municipal Corporation</option>
+                                            </select>
+                                            {showMetroCess && (
+                                                <p className="text-xs text-purple-500 mt-1">
+                                                    <i className="fas fa-info-circle"></i> Metro Cess of 1% applies
+                                                </p>
+                                            )}
+                                            {showLocalBodyTax && (
+                                                <p className="text-xs text-teal-500 mt-1">
+                                                    <i className="fas fa-info-circle"></i> Local Body Tax of 1% applies to all Municipal Corporations
+                                                </p>
+                                            )}
+                                        </div>
+                                    )}
+
+                                    {/* Gender Selection (for sale deeds and agreement to sale) */}
+                                    {(documentType === 'sale' || documentType === 'agreement_to_sale') && (
+                                        <div>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                                Buyer Gender
+                                            </label>
+                                            <div className="flex gap-2 sm:gap-4">
+                                                <button
+                                                    className={`flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg font-medium text-sm sm:text-base transition-all min-h-11 ${
+                                                        gender === 'male' 
+                                                        ? 'bg-purple-400 text-white shadow-md' 
+                                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                                    }`}
+                                                    onClick={() => setGender('male')}
+                                                >
+                                                    <i className="fas fa-male mr-2"></i><span className="hidden sm:inline">Male</span><span className="sm:hidden">M</span>
+                                                </button>
+                                                <button
+                                                    className={`flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg font-medium text-sm sm:text-base transition-all min-h-11 ${
+                                                        gender === 'female' 
+                                                        ? 'bg-pink-400 text-white shadow-md' 
+                                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                                    }`}
+                                                    onClick={() => setGender('female')}
+                                                >
+                                                    <i className="fas fa-female mr-2"></i><span className="hidden sm:inline">Female (1%)</span><span className="sm:hidden">F (1%)</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Leave and License Agreement Fields */}
+                                    {documentType === 'leave_license' && (
+                                        <>
+                                            <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-3 sm:p-4 space-y-3 sm:space-y-4">
+                                                <h4 className="font-semibold text-indigo-900 text-sm sm:text-base flex items-center gap-2">
+                                                    <i className="fas fa-file-contract"></i>
+                                                    <span>Rental Agreement Details</span>
+                                                </h4>
+                                                
+                                                <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                                                    <div>
+                                                        <label className="block text-xs font-semibold text-gray-700 mb-1">
+                                                            Monthly Rent (₹)*
+                                                        </label>
+                                                        <input 
+                                                            type="number"
+                                                            className="w-full px-2 sm:px-3 py-2 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm"
+                                                            placeholder="e.g., 25000"
+                                                            value={monthlyRent}
+                                                            onChange={(e) => setMonthlyRent(e.target.value)}
+                                                        />
+                                                    </div>
+                                                    
+                                                    <div>
+                                                        <label className="block text-xs font-semibold text-gray-700 mb-1">
+                                                            Duration (Months)*
+                                                        </label>
+                                                        <input 
+                                                            type="number"
+                                                            className="w-full px-2 sm:px-3 py-2 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm"
+                                                            placeholder="e.g., 11"
+                                                            value={leaseDuration}
+                                                            onChange={(e) => setLeaseDuration(e.target.value)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                                
+                                                <div>
+                                                    <label className="block text-xs font-semibold text-gray-700 mb-1">
+                                                        Refundable Deposit (₹)
+                                                    </label>
+                                                    <input 
+                                                        type="number"
+                                                        className="w-full px-2 sm:px-3 py-2 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm"
+                                                        placeholder="e.g., 200000"
+                                                        value={refundableDeposit}
+                                                        onChange={(e) => setRefundableDeposit(e.target.value)}
+                                                    />
+                                                    <p className="text-xs text-gray-500 mt-1">
+                                                        <i className="fas fa-info-circle"></i> Notional interest will be calculated on this
+                                                    </p>
+                                                </div>
+                                                
+                                                <div>
+                                                    <label className="block text-xs font-semibold text-gray-700 mb-1">
+                                                        Non-Refundable Deposit (₹)
+                                                    </label>
+                                                    <input 
+                                                        type="number"
+                                                        className="w-full px-2 sm:px-3 py-2 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm"
+                                                        placeholder="e.g., 0"
+                                                        value={nonRefundableDeposit}
+                                                        onChange={(e) => setNonRefundableDeposit(e.target.value)}
+                                                    />
+                                                </div>
+                                                
+                                                <div>
+                                                    <label className="block text-xs font-semibold text-gray-700 mb-1">
+                                                        Interest Rate for Notional Calculation (%)
+                                                    </label>
+                                                    <input 
+                                                        type="number"
+                                                        className="w-full px-2 sm:px-3 py-2 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm"
+                                                        placeholder="10"
+                                                        value={interestRate}
+                                                        onChange={(e) => setInterestRate(e.target.value)}
+                                                    />
+                                                    <p className="text-xs text-gray-500 mt-1">
+                                                        <i className="fas fa-info-circle"></i> Default is 10% per annum
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </>
+                                    )}
+
+                                    {/* Property Value */}
+                                    {documentType !== 'will' && documentType !== 'leave_license' && documentType !== 'power_of_attorney' && (
+                                        <div>
+                                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
+                                                {documentType === 'mortgage' 
+                                                    ? 'Loan/Mortgage Amount (₹)' 
+                                                    : documentType === 'reconveyance'
+                                                    ? 'Original Loan Amount (₹) - Optional'
+                                                    : documentType === 'agreement_to_sale'
+                                                    ? 'Agreement Value / Consideration (₹)'
+                                                    : 'Property/Transaction Value (₹)'}
+                                            </label>
+                                            <div className="relative">
+                                                <span className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                                                <input 
+                                                    type="number"
+                                                    className="w-full pl-7 sm:pl-8 pr-3 sm:pr-4 py-2.5 sm:py-3 border-2 border-gray-300 rounded-lg focus:border-purple-400 focus:ring-2 focus:ring-purple-200 transition-all text-sm sm:text-base"
+                                                    placeholder={documentType === 'mortgage' ? 'Enter loan amount' : documentType === 'reconveyance' ? 'Optional - for reference only' : documentType === 'agreement_to_sale' ? 'Enter agreement value' : 'Enter property value'}
+                                                    value={propertyValue}
+                                                    onChange={(e) => setPropertyValue(e.target.value)}
+                                                />
+                                            </div>
+                                            {documentType === 'reconveyance' && (
+                                                <p className="text-xs text-gray-500 mt-1">
+                                                    <i className="fas fa-info-circle"></i> Fixed fees apply regardless of loan amount
+                                                </p>
+                                            )}
+                                        </div>
+                                    )}
+
+                                    {/* Ready Reckoner Rate */}
+                                    {documentType !== 'mortgage' && documentType !== 'will' && documentType !== 'reconveyance' && documentType !== 'power_of_attorney' && (
+                                        <div>
+                                            <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
+                                                Ready Reckoner Rate (Optional)
+                                            </label>
+                                            <div className="relative">
+                                                <span className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                                                <input 
+                                                    type="number"
+                                                    className="w-full pl-7 sm:pl-8 pr-3 sm:pr-4 py-2.5 sm:py-3 border-2 border-gray-300 rounded-lg focus:border-purple-400 focus:ring-2 focus:ring-purple-200 transition-all text-sm sm:text-base"
+                                                    placeholder="Enter ready reckoner rate"
+                                                    value={readyReckonerRate}
+                                                    onChange={(e) => setReadyReckonerRate(e.target.value)}
+                                                />
+                                            </div>
+                                            <p className="text-xs text-gray-500 mt-1">
+                                                <i className="fas fa-info-circle"></i> If not entered, property value will be used
+                                            </p>
+                                        </div>
+                                    )}
+
+                                    {/* Number of Pages for Document Handling Charges */}
+                                    <div>
+                                        <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2">
+                                            Number of Pages {documentType === 'leave_license' ? '(Not Required - Fixed ₹300)' : ''}
+                                        </label>
+                                        {documentType === 'leave_license' ? (
+                                            <div className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-200 rounded-lg bg-gray-50 text-gray-500 text-sm sm:text-base">
+                                                Fixed charges: ₹300
+                                            </div>
+                                        ) : (
+                                            <>
+                                                <input 
+                                                    type="number"
+                                                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-300 rounded-lg focus:border-purple-400 focus:ring-2 focus:ring-purple-200 transition-all text-sm sm:text-base"
+                                                    placeholder="Enter number of pages"
+                                                    value={numberOfPages}
+                                                    onChange={(e) => setNumberOfPages(e.target.value)}
+                                                    min="1"
+                                                />
+                                                <p className="text-xs text-gray-500 mt-1">
+                                                    <i className="fas fa-info-circle"></i> Document handling charges: ₹40 per page (default: 1 page if not specified)
+                                                </p>
+                                            </>
+                                        )}
+                                    </div>
+
+                                    {/* Buttons */}
+                                    <div className="flex gap-2 sm:gap-3 pt-2 sm:pt-4">
+                                        <button 
+                                            className="flex-1 bg-gradient-to-r from-purple-400 to-pink-400 text-white py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm sm:text-base"
+                                            onClick={calculateStampDuty}
+                                        >
+                                            <i className="fas fa-calculator mr-2"></i><span className="hidden sm:inline">Calculate</span><span className="sm:hidden">Calc</span>
+                                        </button>
+                                        <button 
+                                            className="flex-1 px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-all text-sm sm:text-base"
+                                            onClick={resetForm}
+                                        >
+                                            <i className="fas fa-redo mr-2"></i><span className="hidden sm:inline">Reset</span><span className="sm:hidden">Clear</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Results Panel */}
+                            <div className="space-y-4 sm:space-y-6">
+                                {results ? (
+                                    <>
+                                        <div className="bg-gradient-to-br from-purple-400 to-pink-400 rounded-xl shadow-lg p-4 sm:p-6 text-white">
+                                            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                                                <i className="fas fa-file-invoice-dollar text-lg sm:text-2xl flex-shrink-0"></i>
+                                                <span>Calculation Summary</span>
+                                            </h3>
+                                            <div className="space-y-3 sm:space-y-4 text-sm sm:text-base">
+                                                {documentType !== 'will' && documentType !== 'power_of_attorney' && (
+                                                    <div className="flex justify-between items-center pb-2 sm:pb-3 border-b border-purple-300 text-xs sm:text-sm md:text-base">
+                                                        <span className="text-purple-100">
+                                                            {documentType === 'reconveyance' ? 'Reference Amount (Optional)' : documentType === 'agreement_to_sale' ? 'Agreement Value (Used for Calculation)' : 'Base Value (Used for Calculation)'}
+                                                        </span>
+                                                        <span className="text-xl sm:text-2xl font-bold text-right break-words">{formatCurrency(results.baseValue)}</span>
+                                                    </div>
+                                                )}
+                                                
+                                                {/* Leave and License Breakdown */}
+                                                {results.leaveAndLicenseBreakdown && (
+                                                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 space-y-2">
+                                                        <div className="text-xs font-semibold text-purple-100 mb-2">Calculation Breakdown:</div>
+                                                        <div className="flex justify-between items-center text-sm">
+                                                            <span>Total Rent ({parseFloat(monthlyRent).toLocaleString()} × {leaseDuration} months)</span>
+                                                            <span>{formatCurrency(results.leaveAndLicenseBreakdown.totalRent)}</span>
+                                                        </div>
+                                                        {parseFloat(results.leaveAndLicenseBreakdown.nonRefDeposit) > 0 && (
+                                                            <div className="flex justify-between items-center text-sm">
+                                                                <span>Non-Refundable Deposit</span>
+                                                                <span>{formatCurrency(results.leaveAndLicenseBreakdown.nonRefDeposit)}</span>
+                                                            </div>
+                                                        )}
+                                                        {parseFloat(results.leaveAndLicenseBreakdown.notionalInterest) > 0 && (
+                                                            <div className="flex justify-between items-center text-sm">
+                                                                <span>Notional Interest on Deposit ({interestRate}% p.a.)</span>
+                                                                <span>{formatCurrency(results.leaveAndLicenseBreakdown.notionalInterest)}</span>
+                                                            </div>
+                                                        )}
+                                                        <div className="flex justify-between items-center text-sm pt-2 border-t border-white/20 font-semibold">
+                                                            <span>Total Base Value</span>
+                                                            <span>{formatCurrency(results.baseValue)}</span>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                
+                                                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 space-y-3">
+                                                    <div className="flex justify-between items-center">
+                                                        <span>Stamp Duty {documentType === 'will' ? '' : (documentType === 'reconveyance' || documentType === 'power_of_attorney') ? '(Fixed)' : `(${results.stampDutyRate}%)`}</span>
+                                                        <span className="font-semibold">{formatCurrency(results.stampDuty)}</span>
+                                                    </div>
+                                                    
+                                                    {results.showMetroCess && (
+                                                        <div className="flex justify-between items-center">
+                                                            <span>Metro Cess (1%)</span>
+                                                            <span className="font-semibold">{formatCurrency(results.metroCess)}</span>
+                                                        </div>
+                                                    )}
+                                                    
+                                                    {results.showLocalBodyTax && (
+                                                        <div className="flex justify-between items-center">
+                                                            <span>Local Body Tax (1%)</span>
+                                                            <span className="font-semibold">{formatCurrency(results.localBodyTax)}</span>
+                                                        </div>
+                                                    )}
+                                                    
+                                                    <div className="flex justify-between items-center pt-2 border-t border-white/20">
+                                                        <span className="font-semibold">Total Stamp Duty</span>
+                                                        <span className="font-bold text-lg">{formatCurrency(results.totalStampDuty)}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex justify-between items-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                                    <span>Registration Fee {(documentType === 'will' || documentType === 'reconveyance' || documentType === 'power_of_attorney') ? '(Fixed)' : ''}</span>
+                                                    <span className="font-semibold">{formatCurrency(results.registrationFee)}</span>
+                                                </div>
+
+                                                <div className="flex justify-between items-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                                                    <span>Document Handling Charges {documentType === 'leave_license' ? '(Fixed ₹300)' : `(₹40 × ${numberOfPages || 1} pages)`}</span>
+                                                    <span className="font-semibold">{formatCurrency(results.documentHandlingCharges)}</span>
+                                                </div>
+
+                                                <div className="flex justify-between items-center pt-3 sm:pt-4 border-t-2 border-white/30">
+                                                    <span className="text-lg sm:text-xl font-bold">Total Amount Payable</span>
+                                                    <span className="text-2xl sm:text-3xl font-bold break-words text-right">{formatCurrency(results.totalAmount)}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Breakdown Cards */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+                                            <div className="bg-white rounded-lg shadow-md p-3 sm:p-4 border-l-4 border-purple-400">
+                                                <div className="text-xs sm:text-sm text-gray-600 mb-1">Stamp Duty</div>
+                                                <div className="text-lg sm:text-2xl font-bold text-purple-500 break-words">{formatCurrency(results.totalStampDuty)}</div>
+                                            </div>
+                                            <div className="bg-white rounded-lg shadow-md p-3 sm:p-4 border-l-4 border-pink-400">
+                                                <div className="text-xs sm:text-sm text-gray-600 mb-1">Registration</div>
+                                                <div className="text-lg sm:text-2xl font-bold text-pink-500 break-words">{formatCurrency(results.registrationFee)}</div>
+                                            </div>
+                                            <div className="bg-white rounded-lg shadow-md p-3 sm:p-4 border-l-4 border-teal-400">
+                                                <div className="text-xs sm:text-sm text-gray-600 mb-1">Doc Handling</div>
+                                                <div className="text-lg sm:text-2xl font-bold text-teal-500 break-words">{formatCurrency(results.documentHandlingCharges)}</div>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 text-center border border-gray-200">
+                                        <div className="text-gray-400 mb-4">
+                                            <i className="fas fa-chart-bar text-5xl sm:text-6xl"></i>
+                                        </div>
+                                        <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">No Calculation Yet</h3>
+                                        <p className="text-sm sm:text-base text-gray-500">Fill in the property details and click Calculate to see results</p>
+                                    </div>
+                                )}
+
+                                {/* Advocate Section - always visible in right pane */}
+                                <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl shadow-md p-4 sm:p-6 border-2 border-purple-200">
+                                    <div className="text-center space-y-3">
+                                        <div className="flex items-center justify-center gap-2 sm:gap-3">
+                                            <i className="fas fa-balance-scale text-purple-600 text-xl sm:text-2xl flex-shrink-0"></i>
+                                            <h4 className="font-bold text-gray-800 text-sm sm:text-lg break-words">ADV. AJINKYA ASHOK DHENDE</h4>
+                                        </div>
+                                        <div className="text-xs sm:text-sm text-gray-700 space-y-2">
+                                            <p className="flex items-center justify-center gap-1 sm:gap-2 flex-wrap">
+                                                <i className="fas fa-map-marker-alt text-purple-500 flex-shrink-0"></i>
+                                                <span>Office No. 1, First Floor, MHADA Complex, Gokhalenagar, Pune - 411016</span>
+                                            </p>
+                                            <div className="flex justify-center flex-wrap gap-2 sm:gap-4 mt-2">
+                                                <a href="tel:+918149135283" className="flex items-center gap-1 text-purple-600 hover:text-purple-700 font-medium text-xs sm:text-sm">
+                                                    <i className="fas fa-phone flex-shrink-0"></i>
+                                                    <span className="hidden sm:inline">+91 8149135283</span><span className="sm:hidden">Call</span>
+                                                </a>
+                                                <span className="text-gray-400 hidden sm:inline">|</span>
+                                                <a href="mailto:ajinkya.dhende@gmail.com" className="flex items-center gap-1 text-purple-600 hover:text-purple-700 font-medium text-xs sm:text-sm">
+                                                    <i className="fas fa-envelope flex-shrink-0"></i>
+                                                    <span className="hidden sm:inline">ajinkya.dhende@gmail.com</span><span className="sm:hidden">Email</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div className="mt-3 pt-3 border-t border-purple-200">
+                                            <p className="text-xs text-gray-600 leading-relaxed">
+                                                © {new Date().getFullYear()} Adv. Ajinkya Ashok Dhende. All rights reserved.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {/* Disclaimer - bottom of page */}
+                        <div className="mt-4 bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200 text-xs sm:text-sm">
+                            <div className="flex gap-2 sm:gap-3">
+                                <div className="text-gray-400 flex-shrink-0 mt-0.5">
+                                    <i className="fas fa-exclamation-triangle text-base"></i>
+                                </div>
+                                <div className="min-w-0">
+                                    <span className="font-semibold text-gray-600">Disclaimer: </span>
+                                    <span className="text-gray-500 leading-relaxed">
+                                        This calculator provides an estimate based on current Maharashtra Stamp Act regulations.
+                                        <br className="hidden sm:block" /> Actual charges may vary. Please verify with 
+                                        <a href="https://igrmaharashtra.gov.in" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline"> IGR Maharashtra</a> or consult legal professionals. 
+                                        <a href="https://gras.mahakosh.gov.in/igr" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-500 ml-1">Pay via GRAS</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<StampDutyCalculator />, document.getElementById('root'));
+    </script>
+</body>
+</html>
