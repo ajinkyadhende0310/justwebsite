@@ -35,13 +35,14 @@ button{cursor:pointer;font-family:inherit}
 @keyframes pulseGold{0%,100%{opacity:1}50%{opacity:.55}}
 @keyframes slideDown{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes scaleIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;will-change:opacity,transform}
 .reveal.vis{opacity:1;transform:translateY(0)}
 .reveal-d2{transition-delay:.1s}
 .reveal-d3{transition-delay:.18s}
 .reveal-d4{transition-delay:.26s}
 .reveal-d5{transition-delay:.34s}
 .reveal-d6{transition-delay:.42s}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{transition:none;transform:none;opacity:1}}
 
 /* ═══════════════════════════════════════
    DISCLAIMER OVERLAY
@@ -952,6 +953,8 @@ footer{background:var(--p900);border-top:1px solid rgba(255,255,255,.06);padding
   .footer-disc{text-align:left}
   .form-row{grid-template-columns:1fr}
   .property-flow{grid-template-columns:1fr 1fr}
+  /* Mobile optimization: reduce animation delays */
+  .reveal-d2,.reveal-d3,.reveal-d4,.reveal-d5,.reveal-d6{transition-delay:0!important}
 }
 @media(max-width:480px){
   .practice-grid,.team-grid{grid-template-columns:1fr}
