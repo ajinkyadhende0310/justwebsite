@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .coming-soon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--p050) 0%, var(--gold-bg) 100%);
+            padding: 2rem;
+        }
+        .coming-soon-box {
+            text-align: center;
+            animation: scaleIn 0.8s ease;
+        }
+        .coming-soon-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: pulseGold 2s infinite;
+        }
+        .coming-soon-title {
+            font-family: var(--ff-d);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--p900);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .coming-soon-subtitle {
+            font-family: var(--ff-u);
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .coming-soon-text {
+            font-size: 1.1rem;
+            color: var(--p700);
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+        .coming-soon-btn {
+            display: inline-block;
+            background: var(--p600);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-family: var(--ff-u);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid var(--p600);
+        }
+        .coming-soon-btn:hover {
+            background: transparent;
+            color: var(--p600);
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-soon-container">
+        <div class="coming-soon-box">
+            <div class="coming-soon-icon">📖</div>
+            <h1 class="coming-soon-title">Blog</h1>
+            <p class="coming-soon-subtitle">Coming Soon</p>
+            <p class="coming-soon-text">
+                We're crafting insightful articles and resources to help you navigate the complexities of law and compliance. 
+                Stay tuned for expert insights and valuable information.
+            </p>
+            <a href="index.html" class="coming-soon-btn">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html> 
