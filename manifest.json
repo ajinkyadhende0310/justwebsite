@@ -1,0 +1,88 @@
+{
+  "name": "Dhende Associates — Advocates, Notary & Legal Consultants",
+  "short_name": "Dhende Associates",
+  "description": "Trusted legal advocates and notary in Pune, Maharashtra. Motor accident claims, insurance law, property registration, stamp duty, and more.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "categories": ["legal", "services"],
+  "screenshots": [
+    {
+      "src": "og-image.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "og-image.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Motor Accident Claims",
+      "short_name": "Motor Claims",
+      "description": "Motor accident claim estimation and consultation",
+      "url": "/motor-accident-claim-estimator.html?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "favicon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Stamp Duty Calculator",
+      "short_name": "Stamp Duty",
+      "description": "Maharashtra stamp duty estimation",
+      "url": "/maharshtra-stampduty-estimator.html?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "favicon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Section 138 NI Act",
+      "short_name": "Section 138",
+      "description": "Cheque bounce case guidance",
+      "url": "/nia_138_limitation.html?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "favicon.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "share_target": {
+    "action": "/share-target",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
