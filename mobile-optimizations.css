@@ -1,0 +1,402 @@
+/**
+ * Mobile Performance & UX Optimizations for Dhende Associates
+ * Add these rules to your main style.css or create a separate mobile-optimized stylesheet
+ * 
+ * Focus Areas:
+ * - Touch-friendly interactions
+ * - Cumulative Layout Shift (CLS) prevention
+ * - Interaction to Next Paint (INP) optimization
+ * - Mobile-specific performance enhancements
+ */
+
+/* ============================================================================
+   1. PREVENT LAYOUT SHIFTS (CLS < 0.1)
+   ========================================================================== */
+
+/* Ensure images never cause layout shifts */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Prevent font loading layout shift */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-display: swap; /* Show fallback immediately */
+  src: url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500') format('woff2');
+}
+
+/* Reserve space for dynamic content (ads, overlays, modals) */
+.disclaimer-container {
+  min-height: 0; /* Allow flexible height but prevent layout shift when hidden */
+  transition: max-height 0.3s ease-out;
+}
+
+.modal-overlay {
+  will-change: opacity;
+  contain: layout style paint;
+}
+
+/* Prevent scroll jump when scrollbar appears/disappears */
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
+/* ============================================================================
+   2. TOUCH-FRIENDLY INTERACTIONS (INP < 200ms)
+   ========================================================================== */
+
+/* Remove 300ms tap delay on mobile */
+input,
+button,
+textarea,
+select,
+a {
+  touch-action: manipulation;
+}
+
+/* Minimum touch target size: 48x48px */
+button,
+a.button,
+input[type="button"],
+input[type="submit"],
+.nav-link,
+.service-link {
+  min-width: 48px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Improve button responsiveness */
+button,
+input[type="button"],
+input[type="submit"],
+.button {
+  will-change: transform, background-color;
+  transition: all 0.1s ease-out;
+}
+
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+.button:active {
+  transform: scale(0.95);
+  opacity: 0.85;
+}
+
+/* Debounce click effects on touch devices */
+@media (hover: none) {
+  button:active {
+    background-color: var(--button-active-bg, #e8e8e8);
+  }
+}
+
+/* ============================================================================
+   3. FORM OPTIMIZATION (Mobile)
+   ========================================================================== */
+
+/* Prevent auto-zoom on input focus (iOS) */
+input,
+select,
+textarea {
+  font-size: 16px; /* Must be 16px or larger to prevent zoom */
+  font-family: inherit;
+}
+
+/* Make phone numbers clickable on mobile */
+a[href^="tel:"] {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Improve form field spacing on mobile */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Make checkboxes and radios larger on mobile */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* ============================================================================
+   4. MOBILE VIEWPORT OPTIMIZATION
+   ========================================================================== */
+
+/* Smooth scrolling for better perceived performance */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll */
+body,
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ============================================================================
+   5. ANIMATION PERFORMANCE
+   ========================================================================== */
+
+/* Reduce animations on devices with prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Use GPU acceleration for animations */
+.animated-element,
+.scroll-animation,
+.fade-in,
+.slide-in {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Enable GPU acceleration */
+  backface-visibility: hidden;
+}
+
+/* ============================================================================
+   6. RESPONSIVE TEXT & READABILITY
+   ========================================================================== */
+
+/* Ensure readable font sizes on mobile */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  
+  h2 {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+  
+  h3 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Prevent text size adjustment on orientation change */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+/* ============================================================================
+   7. MOBILE MENU & NAVIGATION
+   ========================================================================== */
+
+/* Improve mobile menu performance */
+.mobile-menu {
+  contain: layout style paint;
+  will-change: transform;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* Make navigation items touch-friendly */
+nav a,
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  min-height: 44px;
+  font-size: 16px;
+}
+
+/* ============================================================================
+   8. IMAGE LOADING OPTIMIZATION
+   ========================================================================== */
+
+/* Blur-up effect while loading high-res images */
+img.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+img.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Show placeholder while image loads */
+img[loading="lazy"] {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+img[loading="lazy"].loaded {
+  animation: none;
+  background: none;
+}
+
+/* ============================================================================
+   9. MODAL & OVERLAY OPTIMIZATION
+   ========================================================================== */
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Modal overlay should be off-screen until needed */
+.modal {
+  contain: layout style paint;
+  will-change: opacity, transform;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================================================
+   10. NETWORK-AWARE OPTIMIZATION
+   ========================================================================== */
+
+/* Reduce animations on slow networks */
+@media (prefers-reduced-data: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================================
+   11. DARK MODE SUPPORT
+   ========================================================================== */
+
+/* Reduce motion in dark mode for better performance */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+  }
+  
+  /* Use lighter shadows in dark mode */
+  * {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ============================================================================
+   12. HIGH DPI DISPLAYS
+   ========================================================================== */
+
+/* Optimize for high-DPI devices (retina, etc) */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  /* Use smaller borders and spacing */
+  body {
+    border-width: 0.5px;
+  }
+}
+
+/* ============================================================================
+   13. PRINT OPTIMIZATION
+   ========================================================================== */
+
+@media print {
+  /* Hide interactive elements in print */
+  button,
+  .no-print,
+  nav,
+  .disclaimer-overlay,
+  .modal {
+    display: none;
+  }
+  
+  /* Optimize colors for printing */
+  * {
+    background: white;
+    color: black;
+    box-shadow: none;
+  }
+}
