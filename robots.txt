@@ -14,7 +14,6 @@ Disallow: /cgi-bin/
 Sitemap: https://www.dhendeassociates.com/sitemap.xml
 
 # Crawl-delay for bots that respect it (optional; remove if not needed)
-Crawl-delay: 10
 
 # AI / LLM crawlers — allow for discoverability (llms.txt is present)
 User-agent: GPTBot
@@ -31,8 +30,7 @@ Allow: /
 
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 5
+
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 10
